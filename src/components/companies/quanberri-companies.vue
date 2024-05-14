@@ -200,5 +200,4 @@ function WatchForCurrentSlide(proxy,index){
   }
 }
 </script>
-
 <style></style>

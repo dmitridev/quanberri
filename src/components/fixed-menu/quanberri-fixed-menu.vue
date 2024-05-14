@@ -5,7 +5,7 @@
                 <img src="@/assets/images/fixed-menu/qb-fixed-menu-icon.png">
             </div>
             <div class="menu">
-                <a class="menu-block">
+                <a class="menu-block" href="/#projects">
                     Проекты
                 </a>
                 <a class="menu-block">

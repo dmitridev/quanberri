@@ -34,6 +34,7 @@
   box-sizing: border-box;
   font-family: "Onest";
   font-weight: 400;
+  scroll-behavior: smooth;
 }
 
 .on-hover-make-animation{

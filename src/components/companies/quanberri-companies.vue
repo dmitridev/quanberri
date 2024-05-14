@@ -24,6 +24,7 @@
       ref="splideDesktop"
       :options="{ arrows: false, pagination: false, loop: true, gap:'20px' }"
       v-if="widthValue > 768"
+      @splide:moved="WatchForCurrentSlide"
     >
       <SplideSlide>
         <div class="companies-list">
@@ -57,6 +58,7 @@
       ref="splideTab"
       :options="{ arrows: false, pagination: false, loop: true, perPage: 2,gap:'20px' }"
       v-else-if="widthValue <= 768 && widthValue > 414"
+      @splide:moved="WatchForCurrentSlide"
     >
       <SplideSlide>
         <div class="companies-list">
@@ -94,6 +96,8 @@
       ref="splideMobile"
       :options="{ arrows: false, pagination: false, perPage: 1,gap:'20px' }"
       v-else-if="widthValue <= 414"
+      
+      @splide:moved="WatchForCurrentSlide"
     >
       <SplideSlide>
         <quanberri-company :image="Company1"></quanberri-company>
@@ -156,20 +160,6 @@ function clickLeftButton() {
 
   if (splideMobile.value) splideMobile.value.go("-1");
 
-  const activeSplide =
-    splideDesktop.value || splideTab.value || splideMobile.value;
-  console.log(activeSplide.splide.index);
-  if (activeSplide.splide.index == 0) {
-    buttonLeft.value.style = "opacity:0.2";
-  } else {
-    buttonLeft.value.style = "";
-  }
-
-  if (activeSplide.splide.index == activeSplide.splide.length - 1) {
-    buttonRight.value.style = "opacity:0.2";
-  } else {
-    buttonRight.value.style = "";
-  }
 }
 
 function clickRightButton() {
@@ -178,16 +168,32 @@ function clickRightButton() {
   if (splideTab.value) splideTab.value.go("+1");
 
   if (splideMobile.value) splideMobile.value.go("+1");
+  
+}
+
+function WatchForCurrentSlide(proxy,index){
+  
   const activeSplide =
-    splideDesktop.value || splideTab.value || splideMobile.value;
-  console.log(activeSplide.splide.length);
-  if (activeSplide.splide.index == activeSplide.splide.length - 1) {
+    splideDesktop.value || splideMobile.value;
+  if (index == 0) {
+    buttonLeft.value.style = "opacity:0.2";
+  } else {
+    buttonLeft.value.style = "";
+  }
+
+  if (index == activeSplide.splide.length - 1) {
     buttonRight.value.style = "opacity:0.2";
   } else {
     buttonRight.value.style = "";
   }
 
-  if (activeSplide.splide.index == 0) {
+  if (index == activeSplide.splide.length - 1) {
+    buttonRight.value.style = "opacity:0.2";
+  } else {
+    buttonRight.value.style = "";
+  }
+
+  if (index == 0) {
     buttonLeft.value.style = "opacity:0.2";
   } else {
     buttonLeft.value.style = "";

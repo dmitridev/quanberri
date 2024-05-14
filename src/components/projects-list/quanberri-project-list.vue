@@ -8,7 +8,7 @@
           @click="clickLeftButton"
           class="button-left splide__arrow--prev"
           title="left"
-          style="opacity:0.2"
+          style="opacity: 0.2"
         >
           <img src="@/assets/images/buttons/circle-button-left.svg" alt="" />
         </button>
@@ -25,6 +25,7 @@
     <Splide
       ref="splideDesktop"
       v-if="widthValue > 414"
+      @splide:moved="WatchForCurrentSlide"
       :options="{
         arrows: false,
         arrows: {
@@ -182,6 +183,7 @@ const splideMobile = ref();
 const buttonLeft = ref();
 const buttonRight = ref();
 
+
 function clickLeftButton() {
   if (splideDesktop.value) splideDesktop.value.go("-1");
 
@@ -190,35 +192,51 @@ function clickLeftButton() {
 
   const activeSplide =
     splideDesktop.value || splideMobile.value;
-  console.log(activeSplide.splide.index);
   if (activeSplide.splide.index == 0) {
     buttonLeft.value.style = "opacity:0.2";
   } else {
     buttonLeft.value.style = "";
   }
 
-  if (activeSplide.splide.index == activeSplide.splide.length - 2) {
+  if (activeSplide.splide.index == activeSplide.splide.length - 1) {
     buttonRight.value.style = "opacity:0.2";
   } else {
     buttonRight.value.style = "";
   }
 }
 
+
 function clickRightButton() {
   if (splideDesktop.value) splideDesktop.value.go("+1");
 
   
   if (splideMobile.value) splideMobile.value.go("+1");
+  
+}
+
+function WatchForCurrentSlide(proxy,index){
+  
   const activeSplide =
     splideDesktop.value || splideMobile.value;
-  console.log(activeSplide.splide.length);
-  if (activeSplide.splide.index == activeSplide.splide.length - 2) {
+  if (index == 0) {
+    buttonLeft.value.style = "opacity:0.2";
+  } else {
+    buttonLeft.value.style = "";
+  }
+
+  if (index == activeSplide.splide.length - 1) {
     buttonRight.value.style = "opacity:0.2";
   } else {
     buttonRight.value.style = "";
   }
 
-  if (activeSplide.splide.index == 0) {
+  if (index == activeSplide.splide.length - 1) {
+    buttonRight.value.style = "opacity:0.2";
+  } else {
+    buttonRight.value.style = "";
+  }
+
+  if (index == 0) {
     buttonLeft.value.style = "opacity:0.2";
   } else {
     buttonLeft.value.style = "";
@@ -235,12 +253,12 @@ function clickRightButton() {
   justify-content: space-between;
   width: 100%;
   align-content: space-between;
-  margin-bottom:157px;
+  margin-bottom: 157px;
 }
 
 @media screen and (max-width: 1280px) {
   .product-list {
-    margin-bottom:128px;
+    margin-bottom: 128px;
   }
 }
 

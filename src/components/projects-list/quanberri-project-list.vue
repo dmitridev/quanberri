@@ -1,5 +1,5 @@
 <template>
-  <div class="our-possibilities">
+  <div class="our-possibilities" id="projects">
     <div class="our-possibilities-header">
       <h2>Помогли запустить<br />&gt;50 продуктов</h2>
       <div class="buttons" v-show="widthValue > 414">

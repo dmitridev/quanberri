@@ -1,4 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-
-createApp(App).mount('#app')
+import VueSplide from '@splidejs/vue-splide'
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+import '@splidejs/vue-splide/css';
+const app = createApp(App);
+app.use(VueSplide,{AutoScroll});
+app.mount('#app')

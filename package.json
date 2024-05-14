@@ -8,6 +8,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "@splidejs/vue-splide": "^0.6.12",
+    "@vueuse/core": "^10.9.0",
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
   },

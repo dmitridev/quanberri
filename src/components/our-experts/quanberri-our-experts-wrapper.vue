@@ -1,5 +1,5 @@
 <template>
-  <div class="our-experts__wrapper">
+  <div class="our-experts__wrapper" id="our-experts">
     <slot></slot>
   </div>
 </template>

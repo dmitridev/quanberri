@@ -1,14 +1,14 @@
 <template>
     <div class="site-menu-container">
         <div class="site-menu">
-            <div class="icon">
+            <div class="icon" @click="window.scrollTo(0,0)">
                 <img src="@/assets/images/fixed-menu/qb-fixed-menu-icon.png">
             </div>
             <div class="menu">
                 <a class="menu-block" href="/#projects">
                     Проекты
                 </a>
-                <a class="menu-block">
+                <a class="menu-block" href="/#our-experts">
                     Команда
                 </a>
                 <a class="menu-block">
@@ -74,6 +74,7 @@
     justify-content: center;
     align-items: center;
     color:var(--font-color);
+    text-decoration: none;
 }
 
 .site-menu .menu-block:hover {

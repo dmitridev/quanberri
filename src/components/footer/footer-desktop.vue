@@ -56,9 +56,6 @@
             <img src="@/assets/images/footer/telegram.svg" alt=""
           /></a>
         </div>
-        <a href="#" class="logo info--mobile-logo">
-          <img src="@/assets/images/footer/quanberri.svg" />
-        </a>
       </div>
     </div>
   </footer>

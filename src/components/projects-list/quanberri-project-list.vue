@@ -247,13 +247,15 @@ function WatchForCurrentSlide(proxy,index){
 
 <style>
 .product-list {
-  display: flex;
-  flex-flow: column wrap;
-  height: 1465px;
-  justify-content: space-between;
-  width: 100%;
-  align-content: space-between;
+  width:100%;
+  display:grid;
+  grid-template-rows: 45% 10% 45%;
+  grid-template-columns:45% 45%;
+  gap:20px;
+  
+  justify-content:space-between;
   margin-bottom: 157px;
+  
 }
 
 @media screen and (max-width: 1280px) {

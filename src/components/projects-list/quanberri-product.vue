@@ -18,9 +18,7 @@ const props = defineProps(["id", "image", "name", "tags"]);
 </script>
 
 <style>
-.product {
-  max-width: 590px;
-}
+
 
 .product span {
   border: 1px solid var(--font-color);
@@ -42,7 +40,7 @@ const props = defineProps(["id", "image", "name", "tags"]);
 }
 
 .product img {
-  width: 590px;
+  width: 100%;
   margin-bottom: 47px;
 }
 

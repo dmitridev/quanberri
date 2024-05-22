@@ -44,19 +44,6 @@ const props = defineProps(["id", "image", "name", "tags"]);
   margin-bottom: 47px;
 }
 
-@media screen and (max-width: 415px) {
-  .product,
-  .product img {
-    width: 100%;
-  }
-
-  .product img {
-    border-radius: 50px !important;
-    height: 225px;
-    object-fit: cover;
-  }
-}
-
 @media screen and (max-width:768px){
   .product .explain{
     display:none;
@@ -68,6 +55,18 @@ const props = defineProps(["id", "image", "name", "tags"]);
 
   .product-list{
     height:600px!important;
+  }
+}
+@media screen and (max-width: 415px) {
+  .product,
+  .product img {
+    width: 100%;
+  }
+
+  .product img {
+    border-radius: 50px !important;
+    height: 225px;
+    object-fit: cover;
   }
 }
 </style>

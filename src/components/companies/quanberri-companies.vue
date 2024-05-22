@@ -3,29 +3,16 @@
     <div class="companies-header">
       <h2>Работали с такими компаниями</h2>
       <div class="buttons" v-if="widthValue > 414">
-        <button
-          ref="buttonLeft"
-          @click="clickLeftButton"
-          class="button-left"
-          style="opacity: 0.2"
-        >
+        <button ref="buttonLeft" @click="clickLeftButton" class="button-left" style="opacity: 0.2">
           <img src="@/assets/images/buttons/circle-button-left.svg" alt="" />
         </button>
-        <button
-          ref="buttonRight"
-          @click="clickRightButton"
-          class="button-right"
-        >
+        <button ref="buttonRight" @click="clickRightButton" class="button-right">
           <img src="@/assets/images/buttons/circle-button-right.svg" alt="" />
         </button>
       </div>
     </div>
-    <Splide
-      ref="splideDesktop"
-      :options="{ arrows: false, pagination: false, loop: true, gap:'20px' }"
-      v-if="widthValue > 768"
-      @splide:moved="WatchForCurrentSlide"
-    >
+    <Splide ref="splideDesktop" :options="{ arrows: false, pagination: false, loop: true, gap: '20px' }"
+      v-if="widthValue > 768" @splide:moved="WatchForCurrentSlide">
       <SplideSlide>
         <div class="companies-list">
           <quanberri-company :image="Company1"></quanberri-company>
@@ -54,12 +41,8 @@
       </SplideSlide>
     </Splide>
 
-    <Splide
-      ref="splideTab"
-      :options="{ arrows: false, pagination: false, loop: true, perPage: 2,gap:'20px' }"
-      v-else-if="widthValue <= 768 && widthValue > 414"
-      @splide:moved="WatchForCurrentSlide"
-    >
+    <Splide ref="splideTab" :options="{ arrows: false, pagination: false, loop: true, perPage: 2, gap: '20px' }"
+      v-else-if="widthValue <= 768 && widthValue > 414" @splide:moved="WatchForCurrentSlide">
       <SplideSlide>
         <div class="companies-list">
           <quanberri-company :image="Company1"></quanberri-company>
@@ -92,13 +75,8 @@
       </SplideSlide>
     </Splide>
 
-    <Splide
-      ref="splideMobile"
-      :options="{ arrows: false, pagination: false, perPage: 1,gap:'20px' }"
-      v-else-if="widthValue <= 414"
-      
-      @splide:moved="WatchForCurrentSlide"
-    >
+    <Splide ref="splideMobile" :options="{ arrows: false, pagination: false, perPage: 1, gap: '20px' }"
+      v-else-if="widthValue <= 414" @splide:moved="WatchForCurrentSlide">
       <SplideSlide>
         <quanberri-company :image="Company1"></quanberri-company>
       </SplideSlide>
@@ -155,49 +133,37 @@ const buttonRight = ref();
 
 function clickLeftButton() {
   if (splideDesktop.value) splideDesktop.value.go("-1");
-
   if (splideTab.value) splideTab.value.go("-1");
-
   if (splideMobile.value) splideMobile.value.go("-1");
 
 }
 
 function clickRightButton() {
   if (splideDesktop.value) splideDesktop.value.go("+1");
-
   if (splideTab.value) splideTab.value.go("+1");
-
   if (splideMobile.value) splideMobile.value.go("+1");
-  
 }
 
-function WatchForCurrentSlide(proxy,index){
-  
+function WatchForCurrentSlide(_, index) {
+  if (!buttonLeft.value && !buttonRight.value)
+    return;
+
   const activeSplide =
     splideDesktop.value || splideMobile.value;
-  if (index == 0) {
-    buttonLeft.value.style = "opacity:0.2";
-  } else {
-    buttonLeft.value.style = "";
-  }
-
-  if (index == activeSplide.splide.length - 1) {
-    buttonRight.value.style = "opacity:0.2";
-  } else {
-    buttonRight.value.style = "";
-  }
-
-  if (index == activeSplide.splide.length - 1) {
-    buttonRight.value.style = "opacity:0.2";
-  } else {
-    buttonRight.value.style = "";
-  }
 
   if (index == 0) {
     buttonLeft.value.style = "opacity:0.2";
-  } else {
+    buttonRight.value.style = "";
+    return;
+  } 
+  
+  if (index == activeSplide.splide.length - 1) {
+    buttonRight.value.style = "opacity:0.2";
     buttonLeft.value.style = "";
+    return;
   }
+
+  buttonRight.value.style = "";
+  buttonLeft.value.style = "";
 }
 </script>
-<style></style>

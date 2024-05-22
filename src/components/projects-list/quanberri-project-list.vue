@@ -186,64 +186,37 @@ const buttonRight = ref();
 
 function clickLeftButton() {
   if (splideDesktop.value) splideDesktop.value.go("-1");
-
-  
   if (splideMobile.value) splideMobile.value.go("-1");
-
-  const activeSplide =
-    splideDesktop.value || splideMobile.value;
-  if (activeSplide.splide.index == 0) {
-    buttonLeft.value.style = "opacity:0.2";
-  } else {
-    buttonLeft.value.style = "";
-  }
-
-  if (activeSplide.splide.index == activeSplide.splide.length - 1) {
-    buttonRight.value.style = "opacity:0.2";
-  } else {
-    buttonRight.value.style = "";
-  }
 }
-
 
 function clickRightButton() {
   if (splideDesktop.value) splideDesktop.value.go("+1");
-
-  
   if (splideMobile.value) splideMobile.value.go("+1");
-  
 }
 
-function WatchForCurrentSlide(proxy,index){
-  
+function WatchForCurrentSlide(_, index) {
+  if (!buttonLeft.value && !buttonRight.value)
+    return;
+
   const activeSplide =
     splideDesktop.value || splideMobile.value;
-  if (index == 0) {
-    buttonLeft.value.style = "opacity:0.2";
-  } else {
-    buttonLeft.value.style = "";
-  }
-
-  if (index == activeSplide.splide.length - 1) {
-    buttonRight.value.style = "opacity:0.2";
-  } else {
-    buttonRight.value.style = "";
-  }
-
-  if (index == activeSplide.splide.length - 1) {
-    buttonRight.value.style = "opacity:0.2";
-  } else {
-    buttonRight.value.style = "";
-  }
 
   if (index == 0) {
     buttonLeft.value.style = "opacity:0.2";
-  } else {
+    buttonRight.value.style = "";
+    return;
+  } 
+  
+  if (index == activeSplide.splide.length - 1) {
+    buttonRight.value.style = "opacity:0.2";
     buttonLeft.value.style = "";
+    return;
   }
+
+  buttonRight.value.style = "";
+  buttonLeft.value.style = "";
 }
 </script>
-
 
 <style>
 .product-list {
@@ -254,8 +227,7 @@ function WatchForCurrentSlide(proxy,index){
   gap:20px;
   
   justify-content:space-between;
-  margin-bottom: 157px;
-  
+  margin-bottom: 157px; 
 }
 
 @media screen and (max-width: 1280px) {

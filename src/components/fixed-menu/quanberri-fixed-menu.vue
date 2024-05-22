@@ -85,4 +85,11 @@
     width: 60px;
     border-radius: 8px;
 }
+
+
+@media screen and (max-width:1000px){
+    .site-menu-container{
+        display:none;
+    }
+}
 </style>

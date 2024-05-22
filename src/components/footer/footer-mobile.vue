@@ -21,9 +21,7 @@
         </div>
         <div class="contact-information">
           <a class="info--phone" href="tel:+79499330595">+7 (949) 933-05-95</a>
-          <a class="info--email" href="mailto:quanberri@gmail.com"
-            >quanberri@gmail.com</a
-          >
+          <a class="info--email" href="mailto:quanberri@gmail.com">quanberri@gmail.com</a>
           <a href="#"><img src="@/assets/images/footer/qb-mobile.svg" /></a>
         </div>
       </div>
@@ -31,5 +29,8 @@
   </footer>
 </template>
 
-
-<style scoped></style>
+<style scoped>
+.social-networks img {
+  width: 41px;
+}
+</style>

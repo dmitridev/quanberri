@@ -11,15 +11,11 @@
     </div>
   </div>
 </template>
-
-<script setup type="module">
+<script setup>
 import { defineProps } from "vue";
 const props = defineProps(["id", "image", "name", "tags"]);
 </script>
-
 <style>
-
-
 .product span {
   border: 1px solid var(--font-color);
   border-radius: 10px;

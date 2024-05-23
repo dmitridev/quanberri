@@ -1,8 +1,6 @@
 <template>
   <div class="product" :id="props.id">
-    <div ref="productImgRef" id="" class="product-img">
-
-    </div>
+    <div ref="productImgRef" id="" class="product-img"></div>
 
     <div class="explain">
       <h3>{{ props.name }}</h3>
@@ -17,36 +15,53 @@
 <script setup>
 import { defineProps, ref, onMounted } from "vue";
 import * as PIXI from "pixi.js";
-import DisplacementFilter from '@/assets/images/textures/blob.png';
+import DisplacementFilter from "@/assets/images/textures/blob.png";
 
 const productImgRef = ref();
 const props = defineProps(["id", "image", "name", "tags"]);
 onMounted(async () => {
-  const renderer = await PIXI.autoDetectRenderer({ transparent: true })
-  productImgRef.value.appendChild(renderer.view.canvas)
-  const stage = new PIXI.Container()
-  const texture = await PIXI.Assets.load(props.image)
+  const renderer = await PIXI.autoDetectRenderer({ transparent: true });
+  productImgRef.value.appendChild(renderer.view.canvas);
 
-  const image = new PIXI.Sprite(texture)
-  let displacementSprite = new PIXI.Sprite(new PIXI.Texture(await PIXI.Assets.load(DisplacementFilter)))
-  const displacementFilter = new PIXI.DisplacementFilter(displacementSprite)
+  const stage = new PIXI.Container();
+  const texture = await PIXI.Assets.load(props.image);
 
-  image.filters = [displacementFilter]
-  stage.addChild(displacementSprite)
-  stage.addChild(image)
-  console.log(displacementSprite.width)
+  const image = new PIXI.Sprite(texture);
+  let displacementSprite = new PIXI.Sprite(
+    new PIXI.Texture(await PIXI.Assets.load(DisplacementFilter))
+  );
+  displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
+  const displacementFilter = new PIXI.DisplacementFilter(displacementSprite);
+  
+  image.filters = [displacementFilter];
+  console.log(image.filters);
+  stage.addChild(image);
+  stage.addChild(displacementSprite);
 
-  const animate = ((speed = 1000) => {
-    requestAnimationFrame(animate)
-    displacementSprite.x += speed
+  let animationFrameNumber = 0;
 
-    if(displacementSprite.x >= displacementSprite.width){
-      displacementSprite.x = 0
+  renderer.view.canvas.addEventListener("mousemove", () => {
+    console.log("hover");
+    animationFrameNumber = requestAnimationFrame(animate);
+  });
+
+  renderer.view.canvas.addEventListener('mouseleave',() =>{
+    console.log('leave');
+    cancelAnimationFrame(animationFrameNumber);
+  });
+
+  const animate = (speed = 5) => {
+    displacementSprite.x += speed;
+    renderer.render(stage);
+    if (displacementSprite.x >= displacementSprite.width) {
+      displacementSprite.x = 0;
     }
-    renderer.render(stage)
-  })
+    if (displacementSprite.y >= displacementSprite.width) {
+      displacementSprite.y = 0;
+    }
+  };
 
-  animate()
+  animate();
 });
 </script>
 
@@ -58,7 +73,6 @@ onMounted(async () => {
   padding: 2px 10px;
   margin-right: 5px;
 }
-
 
 .product .explain {
   display: flex;
@@ -76,7 +90,7 @@ onMounted(async () => {
   margin-bottom: 47px;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
   .product .explain {
     display: none;
   }
@@ -92,7 +106,6 @@ onMounted(async () => {
 }
 
 @media screen and (max-width: 415px) {
-
   .product,
   .product .product-img {
     width: 100%;

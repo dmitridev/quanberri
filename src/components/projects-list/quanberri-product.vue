@@ -3,7 +3,6 @@
     <div class="product-img" >
         <canvas ref="productImgRef" :id="props.id"></canvas>
     </div>
-    
   </div>
 </template>
 <script setup>

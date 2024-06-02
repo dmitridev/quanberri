@@ -124,21 +124,6 @@ h1.brand-text {
   grid-row: span 2;
 }
 
-#product-1 img {
-  border-radius: 50px 50px 0 50px;
-}
-
-#product-2 img {
-  border-radius: 50px 50px 0 50px;
-}
-
-#product-3 img {
-  border-radius: 50px 50px 50px 0px;
-}
-
-#product-4 img {
-  border-radius: 50px 50px 50px 0px;
-}
 
 
 

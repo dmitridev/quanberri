@@ -64,20 +64,20 @@
     <Splide ref="splideMobile" v-else-if="widthValue <= 414"
       :options="{ type: 'loop', gap: '20px', arrows: false, pagination: false }">
       <SplideSlide>
-        <quanberri-product id="product-1" :image="Product1" name="Манжерок"
-          :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
+        <quanberri-mobile-product id="product-1" :image="Product1" name="Манжерок"
+          :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-mobile-product>
       </SplideSlide>
       <SplideSlide>
-        <quanberri-product id="product-2" :image="Product2" name="Фонд Шарафа Рашидова"
-          :tags="['Дизайн', 'Сайты']"></quanberri-product>
+        <quanberri-mobile-product id="product-2" :image="Product2" name="Фонд Шарафа Рашидова"
+          :tags="['Дизайн', 'Сайты']"></quanberri-mobile-product>
       </SplideSlide>
       <SplideSlide>
-        <quanberri-product id="product-3" :image="Product3" name="Бутик Alemon's"
-          :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
+        <quanberri-mobile-product id="product-3" :image="Product3" name="Бутик Alemon's"
+          :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-mobile-product>
       </SplideSlide>
       <SplideSlide>
-        <quanberri-product id="product-4" :image="Product4" name="Sova team"
-          :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
+        <quanberri-mobile-product id="product-4" :image="Product4" name="Sova team"
+          :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-mobile-product>
       </SplideSlide>
     </Splide>
   </div>
@@ -86,6 +86,7 @@
 <script setup>
 import { useWindowSize } from "@vueuse/core";
 import quanberriProduct from "./quanberri-product.vue";
+import QuanberriMobileProduct from './quanberri-mobile-product.vue';
 import Product1 from "@/assets/images/product/product-image-1.png";
 import Product2 from "@/assets/images/product/product-image-2.png";
 import Product3 from "@/assets/images/product/product-image-3.png";

@@ -1,17 +1,9 @@
 <template>
-  <div class="product" :id="props.id" style="max-width:45%">
+  <div :class="{'product':true,'product-style':true}" :id="props.id" >
     <div class="product-img" >
         <canvas ref="productImgRef" :id="props.id"></canvas>
     </div>
-
-    <div class="explain">
-      <h3>{{ props.name }}</h3>
-      <div class="tags">
-        <span :key="tag" v-for="tag in props.tags">
-          {{ tag }}
-        </span>
-      </div>
-    </div>
+    
   </div>
 </template>
 <script setup>
@@ -21,9 +13,8 @@ import * as twgl from 'twgl.js';
 const productImgRef = ref();
 const props = defineProps(["id", "image", "name", "tags",'width','height']);
 
-
 onMounted(async () => {
-  const m4 = twgl.m4;
+const m4 = twgl.m4;
 const gl = productImgRef.value.getContext("webgl");
 /*
 productImgRef.value.width = props.width;
@@ -194,6 +185,10 @@ function clamp(v, min, max) {
 canvas{
   width:100%;
   height:100%;
+}
+
+.product-style{
+  max-width:45%;
 }
 
 .product span {

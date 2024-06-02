@@ -28,9 +28,9 @@
         <div class="product-list">
           <quanberri-product width="590" height="472" id="product-1" :image="Product1" name="Манжерок"
             :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
-          <quanberri-product width="590" height="757" id="product-2" :image="Product2" name="Фонд Шарафа Рашидова"
+          <quanberri-product width="590" height="472" id="product-2" :image="Product2" name="Фонд Шарафа Рашидова"
             :tags="['Дизайн', 'Сайты']"></quanberri-product>
-          <quanberri-product width="590" height="757" id="product-3" :image="Product3" name="Бутик Alemon's"
+          <quanberri-product width="590" height="472" id="product-3" :image="Product3" name="Бутик Alemon's"
             :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
           <quanberri-product width="590" height="472" id="product-4" :image="Product4" name="Sova team"
             :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
@@ -40,9 +40,9 @@
         <div class="product-list">
           <quanberri-product width="590" height="472" id="product-1" :image="Product1" name="Манжерок"
             :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
-          <quanberri-product width="590" height="757" id="product-2" :image="Product2" name="Фонд Шарафа Рашидова"
+          <quanberri-product width="590" height="472" id="product-2" :image="Product2" name="Фонд Шарафа Рашидова"
             :tags="['Дизайн', 'Сайты']"></quanberri-product>
-          <quanberri-product width="590" height="757" id="product-3" :image="Product3" name="Бутик Alemon's"
+          <quanberri-product width="590" height="472" id="product-3" :image="Product3" name="Бутик Alemon's"
             :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
           <quanberri-product width="590" height="472" id="product-4" :image="Product4" name="Sova team"
             :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
@@ -52,9 +52,9 @@
         <div class="product-list">
           <quanberri-product width="590" height="472" id="product-1" :image="Product1" name="Манжерок"
             :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
-          <quanberri-product width="590" height="757" id="product-2" :image="Product2" name="Фонд Шарафа Рашидова"
+          <quanberri-product width="590" height="472" id="product-2" :image="Product2" name="Фонд Шарафа Рашидова"
             :tags="['Дизайн', 'Сайты']"></quanberri-product>
-          <quanberri-product width="590" height="757" id="product-3" :image="Product3" name="Бутик Alemon's"
+          <quanberri-product width="590" height="472" id="product-3" :image="Product3" name="Бутик Alemon's"
             :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
           <quanberri-product width="590" height="472" id="product-4" :image="Product4" name="Sova team"
             :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
@@ -86,10 +86,10 @@
 <script setup>
 import { useWindowSize } from "@vueuse/core";
 import quanberriProduct from "./quanberri-product.vue";
-import Product1 from "@/assets/images/product/product-image-1.jpg";
-import Product2 from "@/assets/images/product/product-image-2.jpg";
-import Product3 from "@/assets/images/product/product-image-3.jpg";
-import Product4 from "@/assets/images/product/product-image-4.jpg";
+import Product1 from "@/assets/images/product/product-image-1.png";
+import Product2 from "@/assets/images/product/product-image-2.png";
+import Product3 from "@/assets/images/product/product-image-3.png";
+import Product4 from "@/assets/images/product/product-image-4.png";
 import { ref } from "vue";
 const { width } = useWindowSize();
 const widthValue = width.value;
@@ -138,8 +138,7 @@ function WatchForCurrentSlide(_, index) {
 <style>
 .product-list {
   display: flex;
-  flex-flow: column wrap;
-  height: 1465px;
+  flex-flow: row wrap;
   justify-content: space-between;
   width: 100%;
   align-content: space-between;

@@ -1,5 +1,5 @@
 <template>
-  <div class="product" :id="props.id">
+  <div class="product" :id="props.id" style="max-width:45%">
     <div class="product-img" >
         <canvas ref="productImgRef" :id="props.id"></canvas>
     </div>
@@ -25,8 +25,13 @@ const props = defineProps(["id", "image", "name", "tags",'width','height']);
 onMounted(async () => {
   const m4 = twgl.m4;
 const gl = productImgRef.value.getContext("webgl");
+/*
 productImgRef.value.width = props.width;
 productImgRef.value.height=props.height;
+*/
+
+productImgRef.value.style=`max-width:100%;max-height:757px;width:${props.width}px;height:${props.height}px`;
+
 const vs = `
 attribute vec4 position;
 attribute vec3 displacement;
@@ -154,21 +159,17 @@ gl.canvas.addEventListener('mousemove', function(event, target) {
   const x = rx * target.width  / target.clientWidth;
   const y = ry * target.height / target.clientHeight;
   
-  // reverse project the mouse onto the image
   var rmat = m4.inverse(currentMatrix);
   var s = m4.transformPoint(
     rmat, [x / target.width * 2 - 1, y / target.height * 2 - 1, 0]);
   
-  // s is now a point in the space of `position`
-
-  // lets just move closest point?
   var gx = Math.round((s[0] * .5 + .5) * res);
   var gy = Math.round((s[1] * .5 + .5) * res);
   
-  gx = clamp(gx, 0, res - 1);
-  gy = clamp(gy, 0, res - 1);
+  gx = clamp(gx, 5, res - 1);
+  gy = clamp(gy, 5, res - 1);
   
-  const offset = ((res - gy - 1) * res + gx) * 3 * 4;
+  const offset = ((res - gy - 1) * res + gx) * 12;
   
   displace[0] = rand(-.1, .1);
   displace[1] = rand(-.1, .1);

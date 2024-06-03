@@ -1,5 +1,5 @@
 <template>
-  <div :class="{'product':true,'product-style':true}" :id="props.id" >
+  <div class="product product-style" :id="props.id" >
     <div class="product-img" >
         <canvas ref="productImgRef" :id="props.id"></canvas>
     </div>
@@ -186,9 +186,7 @@ canvas{
   height:100%;
 }
 
-.product-style{
-  max-width:45%;
-}
+
 
 .product span {
   border: 1px solid var(--font-color);
@@ -217,15 +215,6 @@ canvas{
 @media screen and (max-width: 768px) {
   .product .explain {
     display: none;
-  }
-
-  .product,
-  .product .full-sized-canvas {
-    width: 60%;
-  }
-
-  .product-list {
-    height: 600px !important;
   }
 }
 

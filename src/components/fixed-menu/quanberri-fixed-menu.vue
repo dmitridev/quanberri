@@ -1,95 +1,107 @@
 <template>
-    <div class="site-menu-container">
-        <div class="site-menu">
-            <div class="icon" @click="window.scrollTo(0,0)">
-                <img src="@/assets/images/fixed-menu/qb-fixed-menu-icon.png">
-            </div>
-            <div class="menu">
-                <a class="menu-block" href="/#projects">
-                    Проекты
-                </a>
-                <a class="menu-block" href="/#our-experts">
-                    Команда
-                </a>
-                <a class="menu-block">
-                    Контакты
-                </a>
-            </div>
-        </div>
+  <div class="site-menu-container">
+    <div class="site-menu-wrapper">
+      <div class="icon" @click="window.scrollTo(0, 0)">
+        <img src="@/assets/images/fixed-menu/qb-logo-menu.svg" />
+      </div>
+      <div class="site-menu-button" v-show="!state.isShow">
+        <button class="menu-button" @click="showMenu">Меню</button>
+      </div>
+      <div class="site-menu" ref="siteMenu" v-show="state.isShow">
+        <a class="menu-block" href="/#projects"> Проекты </a>
+        <a class="menu-block" href="/#our-experts"> Команда </a>
+        <a class="menu-block"> Контакты </a>
+        <span class="close-button" @click="closeMenu">&times;</span>
+      </div>
     </div>
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { reactive, ref } from "vue";
+const siteMenu = ref();
+
+let state = reactive({ isShow: false });
+
+const showMenu = () => {
+  state.isShow = true;
+};
+
+const closeMenu = () => {
+  state.isShow = false;
+};
+</script>
 
 <style scoped>
 .site-menu-container {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  
+  bottom: 30px;
+  z-index: 999999;
 }
 
-.site-menu {
-    position: fixed;
-    bottom: 30px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 420px;
-    height: 75px;
-    background: #1b1b1b;
-    border-radius: 8px;
-    gap: 36px;
-    z-index: 999999;
-    opacity: 0.8;
+.menu-button {
+  border: none;
+  background: white;
+  border-radius: 16px;
+  padding: 12px 23px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.site-menu-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 50px;
+  backdrop-filter: blur(10px) saturate(200%) invert(20%);
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-right: 25px;
+  transition: all 2s;
+}
+
+.close-button {
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
 }
 
 .site-menu .icon {
-    cursor: pointer;
-    padding: 10px;
+  cursor: pointer;
+  padding: 10px;
 }
 
-.site-menu .menu {
-    background: #3e3e3e;
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    gap: 5px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    padding: 10px;
+.site-menu-wrapper .site-menu {
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: center;
+  padding: 10px;
 }
 
 .site-menu .menu-block {
-    display: block;
-    padding: 13px 8px;
-    width: 87px;
-    height: 48px;
-    cursor: pointer;
-    border-radius: 8px;
-    border: 1px solid #4e4e4e;
-    font-size: 13px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color:var(--font-color);
-    text-decoration: none;
-}
-
-.site-menu .menu-block:hover {
-    border: 1px solid white;
+  display: block;
+  padding: 13px 8px;
+  width: 87px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--font-color);
+  text-decoration: none;
 }
 
 .site-menu img {
-    width: 60px;
-    border-radius: 8px;
-}
-
-
-@media screen and (max-width:1000px){
-    .site-menu-container{
-        display:none;
-    }
+  width: 100%;
+  border-radius: 8px;
 }
 </style>

@@ -9,6 +9,6 @@ const props = defineProps(['image']);
 
 <style>
     .company-img{
-        max-width:290px;
+        max-width:260px;
     }
 </style>

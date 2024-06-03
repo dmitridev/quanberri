@@ -46,14 +46,9 @@
       display: none;
     }
   
-    .product,
-    .product .full-sized-canvas {
-      width: 60%;
-    }
+    
   
-    .product-list {
-      height: 600px !important;
-    }
+    
   }
   
   @media screen and (max-width: 415px) {

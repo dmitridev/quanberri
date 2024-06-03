@@ -16,11 +16,7 @@
                 <div class="explain">
                     <p>Danielle Buffa</p>
                     <p>Principal Designer</p>
-                    <div class="tags">
-                        <span>Animation</span>
-                        <span>UI</span>
-                        <span>Visual</span>
-                    </div>
+                    
                 </div>
             </div>
         </SplideSlide>
@@ -30,10 +26,7 @@
                 <div class="explain">
                     <p>Vladimir Gruev</p>
                     <p>Digital Designer</p>
-                    <div class="tags">
-                        <span>Brand</span>
-                        <span>Design</span>
-                    </div>
+                    
                 </div>
             </div>
         </SplideSlide>
@@ -43,11 +36,7 @@
                 <div class="explain">
                     <p>Сергей Бондаренко</p>
                     <p>Design Educator</p>
-                    <div class="tags">
-                        <span>UI</span>
-                        <span>Web</span>
-                        <span>Mobile</span>
-                    </div>
+                    
                 </div>
             </div>
         </SplideSlide>
@@ -57,10 +46,7 @@
                 <div class="explain">
                     <p>Владимир Хоменко</p>
                     <p>Illustrator</p>
-                    <div class="tags">
-                        <span>Graphic Design</span>
-                        <span>Illustration</span>
-                    </div>
+                    
                 </div>
             </div>
         </SplideSlide>
@@ -70,11 +56,7 @@
                 <div class="explain">
                     <p>Victa Wille</p>
                     <p>Digital Designer</p>
-                    <div class="tags">
-                        <span>Mobile</span>
-                        <span>UI</span>
-                        <span>Web</span>
-                    </div>
+                    
                 </div>
             </div>
         </SplideSlide>
@@ -84,11 +66,7 @@
                 <div class="explain">
                     <p>София Ефименко</p>
                     <p>Brand Designer</p>
-                    <div class="tags">
-                        <span>Brand</span>
-                        <span>Illustration</span>
-                        <span>Web</span>
-                    </div>
+                    
                 </div>
             </div>
         </SplideSlide>

@@ -140,11 +140,11 @@ function WatchForCurrentSlide(_, index) {
 .product-list {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content:space-between;
   width: 100%;
   align-content: space-between;
   margin-bottom: 157px;
-  gap:20px;
+  row-gap:20px;
 }
 
 @media screen and (max-width: 1280px) {

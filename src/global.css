@@ -42,6 +42,7 @@
   overflow:hidden;
   scroll-behavior: smooth;
   cursor:pointer;
+  font-size:0.8em;
 }
 
 .splide__arrows{

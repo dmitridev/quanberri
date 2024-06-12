@@ -9,7 +9,7 @@
   --margin-size: 340px;
 }
 .container {
-  max-width: 1355px;
+  max-width: 1200px;
   width: calc(100% - var(--margin-size));
   margin: 0 auto;
 }

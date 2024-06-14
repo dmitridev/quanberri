@@ -62,6 +62,10 @@ function watchForCurrentSlide(_, index) {
     top:20vh;
 }
 
+body:has(.product-gallery.clicked){
+    overflow:hidden;
+}
+
 @keyframes showGallery{
     0%{
         top:100vh;
@@ -84,7 +88,7 @@ function watchForCurrentSlide(_, index) {
 
 .product-img-slide img {
   object-fit: contain;
-  width: 1000px;
+  width: min(1000px,100vw);
   border-radius:10px;
 }
 

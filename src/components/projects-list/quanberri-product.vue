@@ -14,10 +14,6 @@ const props = defineProps(["id", "image", "name", "tags", 'width', 'height']);
 onMounted(async () => {
   const m4 = twgl.m4;
   const gl = productImgRef.value.getContext("webgl");
-  /*
-  productImgRef.value.width = props.width;
-  productImgRef.value.height=props.height;
-  */
 
   productImgRef.value.style = `max-width:100%;max-height:757px;width:${props.width}px;height:${props.height}px`;
 

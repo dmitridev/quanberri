@@ -27,46 +27,39 @@
       <SplideSlide>
         <div class="product-list">
           <quanberri-product width="590" height="472" id="product-1" :image="Product1" name="Манжерок"
-            @click="products_gallery1.classList.toggle('clicked')"
-            :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
+            @click="galleries[0] = !galleries[0]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
           <quanberri-product width="590" height="472" id="product-2" :image="Product2" name="Фонд Шарафа Рашидова"
-            @click="products_gallery2.classList.toggle('clicked')" :tags="['Дизайн', 'Сайты']"></quanberri-product>
+            @click="galleries[1] = !galleries[1]" :tags="['Дизайн', 'Сайты']"></quanberri-product>
+
           <quanberri-product width="590" height="472" id="product-3" :image="Product3" name="Бутик Alemon's"
-            @click="products_gallery3.classList.toggle('clicked')"
-            :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
+            @click="galleries[2] = !galleries[2]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
+
           <quanberri-product width="590" height="472" id="product-4" :image="Product4" name="Sova team"
-            @click="products_gallery4.classList.toggle('clicked')"
-            :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
+            @click="galleries[3] = !galleries[3]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
         </div>
       </SplideSlide>
       <SplideSlide>
         <div class="product-list">
+          <quanberri-product width="590" height="472" id="product-1" :image="Product5" name="Манжерок"
+            @click="galleries[4] = !galleries[4]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
           <quanberri-product width="590" height="472" id="product-1" :image="Product1" name="Манжерок"
-            @click="products.gallery[gallery1].classList.toggle('clicked')"
-            :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
+            @click="galleries[0] = !galleries[0]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
           <quanberri-product width="590" height="472" id="product-2" :image="Product2" name="Фонд Шарафа Рашидова"
-            @click="products.gallery[1].classList.toggle('clicked')" :tags="['Дизайн', 'Сайты']"></quanberri-product>
+            @click="galleries[1] = !galleries[1]" :tags="['Дизайн', 'Сайты']"></quanberri-product>
           <quanberri-product width="590" height="472" id="product-3" :image="Product3" name="Бутик Alemon's"
-            @click="products.gallery[1].classList.toggle('clicked')"
-            :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
-          <quanberri-product width="590" height="472" id="product-4" :image="Product4" name="Sova team"
-            @click="products.gallery[1].classList.toggle('clicked')"
-            :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
+            @click="galleries[2] = !galleries[2]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
         </div>
       </SplideSlide>
       <SplideSlide>
         <div class="product-list">
-          <quanberri-product width="590" height="472" id="product-1" :image="Product1" name="Манжерок"
-            @click="products.gallery[1].classList.toggle('clicked')"
-            :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
-          <quanberri-product width="590" height="472" id="product-2" :image="Product2" name="Фонд Шарафа Рашидова"
-            @click="products.gallery[1].classList.toggle('clicked')" :tags="['Дизайн', 'Сайты']"></quanberri-product>
-          <quanberri-product width="590" height="472" id="product-3" :image="Product3" name="Бутик Alemon's"
-            @click="products.gallery[1].classList.toggle('clicked')"
-            :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
-          <quanberri-product width="590" height="472" id="product-4" :image="Product4" name="Sova team"
-            @click="products.gallery[1].classList.toggle('clicked')"
-            :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
+          <quanberri-product width="590" height="472" id="product-1" :image="Product4" name="Sova team"
+            @click="galleries[3] = !galleries[3]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
+          <quanberri-product width="590" height="472" id="product-2" :image="Product5" name="Фонд Шарафа Рашидова"
+            @click="galleries[4] = !galleries[4]" :tags="['Дизайн', 'Сайты']"></quanberri-product>
+          <quanberri-product width="590" height="472" id="product-3" :image="Product1" name="Манжерок"
+            @click="galleries[0] = !galleries[0]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
+          <quanberri-product width="590" height="472" id="product-4" :image="Product2" name="Фонд Шарафа Рашидова"
+            @click="galleries[0] = !galleries[0]" :tags="['Дизайн', 'Сайты']"></quanberri-product>
         </div>
       </SplideSlide>
     </Splide>
@@ -90,167 +83,32 @@
       </SplideSlide>
     </Splide>
 
-    <div class="product-gallery" ref="products_gallery1">
-
-      <Splide :options={type:loop,gap:20,autoWidth:true}>
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product1_1" /></div>
-
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product1_2" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product1_3" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product1_4" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product1_5" /></div>
-        </SplideSlide>
-
-      </Splide>
-    </div>
-
-    <div class="product-gallery" ref="products_gallery2">
-      <Splide :options={type:loop,gap:20,autoWidth:true}>
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product2_1" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product2_2" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product2_3" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product2_4" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product2_5" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product2_6" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product2_7" /></div>
-        </SplideSlide>
-
-      </Splide>
-    </div>
-
-    <div class="product-gallery" ref="products_gallery3">
-      <Splide :options={type:loop,gap:20,autoWidth:true}>
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product3_1" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product3_2" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product3_3" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product3_4" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product3_5" /></div>
-        </SplideSlide>
-
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product3_6" /></div>
-        </SplideSlide>
-
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product3_7" /></div>
-        </SplideSlide>
-      </Splide>
-    </div>
-
-    <div class="product-gallery" ref="products_gallery4">
-      <Splide :options={type:loop,gap:20,autoWidth:true}>
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product4_1" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product4_2" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product4_3" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product4_4" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product4_5" /></div>
-        </SplideSlide>
-
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product4_6" /></div>
-        </SplideSlide>
-      </Splide>
-    </div>
-
-    <div class="product-gallery" ref="products_gallery5">
-      <Splide :options={type:loop,gap:20,autoWidth:true}>
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product5_1" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product5_2" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product5_3" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product5_4" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product5_5" /></div>
-        </SplideSlide>
-
-        <SplideSlide>
-          <div class="product-img-slide"><img :src="Product5_6" /></div>
-        </SplideSlide>
-      </Splide>
-    </div>
+    <quanberri-product-gallery :class="{ 'clicked': galleries[0] }" ref="products_gallery1" name="FRESCO" @closeGallery="galleries[0]=false"
+      :images="[Product1_1, Product1_2, Product1_3, Product1_4, Product1_5]" />
+    <quanberri-product-gallery :class="{ 'clicked': galleries[1] }" ref="products_gallery2" name="UXU" @closeGallery="galleries[1]=false"
+      :images="[Product2_1, Product2_2, Product2_3, Product2_4, Product2_5, Product2_6, Product2_7]" />
+    <quanberri-product-gallery :class="{ 'clicked': galleries[2] }" ref="products_gallery3" name="CAFEE" @closeGallery="galleries[2]=false"
+      :images="[Product3_1, Product3_2, Product3_3, Product3_4, Product3_5, Product3_6, Product3_7]" />
+    <quanberri-product-gallery :class="{ 'clicked': galleries[3] }" ref="products_gallery4" name="QUANBERRI" @closeGallery="galleries[3]=false"
+      :images="[Product4_1, Product4_2, Product4_3, Product4_4, Product4_5, Product4_6]" />
+    <quanberri-product-gallery :class="{ 'clicked': galleries[4] }" ref="products_gallery5" name="ATMOSPHERE" @closeGallery="galleries[4]=false"
+      :images="[Product5_1, Product5_2, Product5_3, Product5_4, Product5_5, Product5_6]" />
   </div>
 </template>
 
 <script setup>
+import { reactive } from 'vue';
 import { useWindowSize } from "@vueuse/core";
 import quanberriProduct from "./quanberri-product.vue";
 import QuanberriMobileProduct from './quanberri-mobile-product.vue';
-import Product1 from "@/assets/images/product/product-image-1.png";
-import Product2 from "@/assets/images/product/product-image-2.png";
-import Product3 from "@/assets/images/product/product-image-3.png";
-import Product4 from "@/assets/images/product/product-image-4.png";
+
+import QuanberriProductGallery from './quanberri-product-gallery.vue';
+
+import Product1 from "@/assets/images/product/Product-1-mini.webp";
+import Product2 from "@/assets/images/product/Product-2-mini.webp";
+import Product3 from "@/assets/images/product/Product-3-mini.webp";
+import Product4 from "@/assets/images/product/Product-4-mini.webp";
+import Product5 from "@/assets/images/product/Product-5-mini.webp";
 
 import Product1_1 from "@/assets/images/product/Product1_1.webp";
 import Product1_2 from "@/assets/images/product/Product1_2.webp";
@@ -287,18 +145,16 @@ import Product5_6 from "@/assets/images/product/Product5_6.webp";
 
 import { ref } from "vue";
 
-const products = {
-  list: [Product1, Product2, Product3, Product4],
-}
+
+const galleries = reactive([
+  false, false, false, false, false
+])
 
 const products_gallery1 = ref();
 const products_gallery2 = ref();
 const products_gallery3 = ref();
 const products_gallery4 = ref();
-
-
-console.log(products);
-
+const products_gallery5 = ref();
 
 const { width } = useWindowSize();
 const widthValue = width.value;
@@ -345,31 +201,6 @@ function WatchForCurrentSlide(_, index) {
 </script>
 
 <style>
-
-.product-gallery{
-  padding-top:120px;
-}
-
-.product-gallery {
-  position: fixed;
-  top: 100vh;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: none;
-  background:black;
-}
-
-.product-gallery.clicked {
-  display: flex;
-  top: 20vh;
-  left: 0;
-}
-
-.product-img-slide img{
-  object-fit:contain;
-  width:1000px;
-}
 
 .product-list {
   display: flex;

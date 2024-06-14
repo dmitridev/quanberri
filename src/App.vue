@@ -26,7 +26,7 @@
 
   <quanberri-container>
     <quanberri-projects-list-wrapper>
-      <quanberri-project-list></quanberri-project-list>
+      <quanberri-project-list ></quanberri-project-list>
     </quanberri-projects-list-wrapper>
   </quanberri-container>
 

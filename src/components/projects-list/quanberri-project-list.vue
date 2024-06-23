@@ -26,39 +26,39 @@
     }" aria-label="Наши люди">
       <SplideSlide>
         <div class="product-list">
-          <quanberri-product width="590" height="472" id="product-1" :image="Product1" name="Манжерок"
+          <quanberri-product width="590" height="472" id="product-1" :image="Fresco_cropped" name="Производитель керамических изделий"
             @click="galleries[0] = !galleries[0]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
-          <quanberri-product width="590" height="472" id="product-2" :image="Product2" name="Фонд Шарафа Рашидова"
+          <quanberri-product width="590" height="472" id="product-2" :image="Atmosphere_cropped" name="Новый бренд event-пространства Atmosphere"
             @click="galleries[1] = !galleries[1]" :tags="['Дизайн', 'Сайты']"></quanberri-product>
 
-          <quanberri-product width="590" height="472" id="product-3" :image="Product3" name="Бутик Alemon's"
+          <quanberri-product width="590" height="472" id="product-3" :image="Caffe_cropped" name="CAFEE - новый формат кофейни"
             @click="galleries[2] = !galleries[2]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
 
-          <quanberri-product width="590" height="472" id="product-4" :image="Product4" name="Sova team"
+          <quanberri-product width="590" height="472" id="product-4" :image="Quanberri_cropped" name="Разработчик цифровых решений полного цикла"
             @click="galleries[3] = !galleries[3]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
         </div>
       </SplideSlide>
       <SplideSlide>
         <div class="product-list">
-          <quanberri-product width="590" height="472" id="product-1" :image="Product5" name="Манжерок"
+          <quanberri-product width="590" height="472" id="product-1" :image="Uxu_cropped" name="Uxu"
             @click="galleries[4] = !galleries[4]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
-          <quanberri-product width="590" height="472" id="product-1" :image="Product1" name="Манжерок"
+          <quanberri-product width="590" height="472" id="product-1" :image="Fresco_cropped" name="Производитель керамических изделий"
             @click="galleries[0] = !galleries[0]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
-          <quanberri-product width="590" height="472" id="product-2" :image="Product2" name="Фонд Шарафа Рашидова"
+          <quanberri-product width="590" height="472" id="product-2" :image="Atmosphere_cropped" name="Новый бренд event-пространства Atmosphere"
             @click="galleries[1] = !galleries[1]" :tags="['Дизайн', 'Сайты']"></quanberri-product>
-          <quanberri-product width="590" height="472" id="product-3" :image="Product3" name="Бутик Alemon's"
+          <quanberri-product width="590" height="472" id="product-3" :image="Caffe_cropped" name="CAFEE - новый формат кофейни"
             @click="galleries[2] = !galleries[2]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
         </div>
       </SplideSlide>
       <SplideSlide>
         <div class="product-list">
-          <quanberri-product width="590" height="472" id="product-1" :image="Product4" name="Sova team"
+          <quanberri-product width="590" height="472" id="product-1" :image="Quanberri_cropped" name="Разработчик цифровых решений полного цикла"
             @click="galleries[3] = !galleries[3]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
-          <quanberri-product width="590" height="472" id="product-2" :image="Product5" name="Фонд Шарафа Рашидова"
+          <quanberri-product width="590" height="472" id="product-2" :image="Uxu_cropped" name="Uxu"
             @click="galleries[4] = !galleries[4]" :tags="['Дизайн', 'Сайты']"></quanberri-product>
-          <quanberri-product width="590" height="472" id="product-3" :image="Product1" name="Манжерок"
+          <quanberri-product width="590" height="472" id="product-3" :image="Fresco_cropped" name="Производитель керамических изделий"
             @click="galleries[0] = !galleries[0]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
-          <quanberri-product width="590" height="472" id="product-4" :image="Product2" name="Фонд Шарафа Рашидова"
+          <quanberri-product width="590" height="472" id="product-4" :image="Atmosphere_cropped" name="Новый бренд event-пространства Atmosphere"
             @click="galleries[0] = !galleries[0]" :tags="['Дизайн', 'Сайты']"></quanberri-product>
         </div>
       </SplideSlide>
@@ -66,33 +66,38 @@
     <Splide ref="splideMobile" v-else-if="widthValue <= 414"
       :options="{ type: 'loop', gap: '20px', arrows: false, pagination: false }">
       <SplideSlide>
-        <quanberri-mobile-product id="product-1" :image="Product1" name="Манжерок"
+        <quanberri-mobile-product id="product-1" :image="Fresco_cropped" name="Производитель керамических изделий"
           :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-mobile-product>
       </SplideSlide>
       <SplideSlide>
-        <quanberri-mobile-product id="product-2" :image="Product2" name="Фонд Шарафа Рашидова"
+        <quanberri-mobile-product id="product-2" :image="Atmosphere_cropped" name="Новый бренд event-пространства Atmosphere"
           :tags="['Дизайн', 'Сайты']"></quanberri-mobile-product>
       </SplideSlide>
       <SplideSlide>
-        <quanberri-mobile-product id="product-3" :image="Product3" name="Бутик Alemon's"
+        <quanberri-mobile-product id="product-3" :image="Caffe_cropped" name="CAFEE - новый формат кофейни"
           :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-mobile-product>
       </SplideSlide>
       <SplideSlide>
-        <quanberri-mobile-product id="product-4" :image="Product4" name="Sova team"
+        <quanberri-mobile-product id="product-4" :image="Quanberri_cropped" name="Разработчик цифровых решений полного цикла"
           :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-mobile-product>
       </SplideSlide>
     </Splide>
 
-    <quanberri-product-gallery :class="{ 'clicked': galleries[0] }" ref="products_gallery1" name="FRESCO" @closeGallery="galleries[0]=false"
-      :images="[Product1_1, Product1_2, Product1_3, Product1_4, Product1_5]" />
-    <quanberri-product-gallery :class="{ 'clicked': galleries[1] }" ref="products_gallery2" name="UXU" @closeGallery="galleries[1]=false"
-      :images="[Product2_1, Product2_2, Product2_3, Product2_4, Product2_5, Product2_6, Product2_7]" />
-    <quanberri-product-gallery :class="{ 'clicked': galleries[2] }" ref="products_gallery3" name="CAFEE" @closeGallery="galleries[2]=false"
-      :images="[Product3_1, Product3_2, Product3_3, Product3_4, Product3_5, Product3_6, Product3_7]" />
-    <quanberri-product-gallery :class="{ 'clicked': galleries[3] }" ref="products_gallery4" name="QUANBERRI" @closeGallery="galleries[3]=false"
-      :images="[Product4_1, Product4_2, Product4_3, Product4_4, Product4_5, Product4_6]" />
-    <quanberri-product-gallery :class="{ 'clicked': galleries[4] }" ref="products_gallery5" name="ATMOSPHERE" @closeGallery="galleries[4]=false"
-      :images="[Product5_1, Product5_2, Product5_3, Product5_4, Product5_5, Product5_6]" />
+    <quanberri-product-gallery :class="{ 'clicked': galleries[0] }" ref="products_gallery1" name="Производитель керамических изделий" @closeGallery="galleries[0]=false"
+      :images="[Fresco_1, Fresco_2, Fresco_3, Fresco_4, Fresco_5]" />
+    
+      <quanberri-product-gallery :class="{ 'clicked': galleries[1] }" ref="products_gallery5" name="Новый бренд event-пространства Atmosphere" @closeGallery="galleries[1]=false"
+      :images="[Atmosphere_1, Atmosphere_2, Atmosphere_3, Atmosphere_4, Atmosphere_5, Atmosphere_6]" />
+    
+      <quanberri-product-gallery :class="{ 'clicked': galleries[2] }" ref="products_gallery3" name="CAFEE - новый формат кофейни" @closeGallery="galleries[2]=false"
+      :images="[Caffe_1, Caffe_2, Caffe_3, Caffe_4, Caffe_5, Caffe_6, Caffe_7]" />
+    <quanberri-product-gallery :class="{ 'clicked': galleries[3] }" ref="products_gallery4" name="Разработчик цифровых решений полного цикла" @closeGallery="galleries[3]=false"
+      :images="[Quanberri_1, Quanberri_2, Quanberri_3, Quanberri_4, Quanberri_5, Quanberri_6]" />
+    
+    
+      <quanberri-product-gallery :class="{ 'clicked': galleries[4] }" ref="products_gallery2" name="UXU" @closeGallery="galleries[4]=false"
+      :images="[Uxu_1, Uxu_2, Uxu_3, Uxu_4, Uxu_5, Uxu_6]" />
+  
   </div>
 </template>
 
@@ -104,44 +109,43 @@ import QuanberriMobileProduct from './quanberri-mobile-product.vue';
 
 import QuanberriProductGallery from './quanberri-product-gallery.vue';
 
-import Product1 from "@/assets/images/product/Product-1-mini.webp";
-import Product2 from "@/assets/images/product/Product-2-mini.webp";
-import Product3 from "@/assets/images/product/Product-3-mini.webp";
-import Product4 from "@/assets/images/product/Product-4-mini.webp";
-import Product5 from "@/assets/images/product/Product-5-mini.webp";
+import Fresco_cropped from "@/assets/images/product/Fresco_0_cropped.webp";
+import Atmosphere_cropped from "@/assets/images/product/Atmosphere_5_cropped.webp";
+import Caffe_cropped from "@/assets/images/product/Caffe_0_cropped.webp";
+import Quanberri_cropped from "@/assets/images/product/Quanberri_0_cropped.webp";
+import Uxu_cropped from "@/assets/images/product/Uxu_5_cropped.webp";
 
-import Product1_1 from "@/assets/images/product/Product1_1.webp";
-import Product1_2 from "@/assets/images/product/Product1_2.webp";
-import Product1_3 from "@/assets/images/product/Product1_3.webp";
-import Product1_4 from "@/assets/images/product/Product1_4.webp";
-import Product1_5 from "@/assets/images/product/Product1_5.webp";
-import Product2_1 from "@/assets/images/product/Product2_1.webp";
-import Product2_2 from "@/assets/images/product/Product2_2.webp";
-import Product2_3 from "@/assets/images/product/Product2_3.webp";
-import Product2_4 from "@/assets/images/product/Product2_4.webp";
-import Product2_5 from "@/assets/images/product/Product2_5.webp";
-import Product2_6 from "@/assets/images/product/Product2_6.webp";
-import Product2_7 from "@/assets/images/product/Product2_7.webp";
-import Product3_1 from "@/assets/images/product/Product3_1.webp";
-import Product3_2 from "@/assets/images/product/Product3_2.webp";
-import Product3_3 from "@/assets/images/product/Product3_3.webp";
-import Product3_4 from "@/assets/images/product/Product3_4.webp";
-import Product3_5 from "@/assets/images/product/Product3_5.webp";
-import Product3_6 from "@/assets/images/product/Product3_6.webp";
-import Product3_7 from "@/assets/images/product/Product3_7.webp";
-import Product4_1 from "@/assets/images/product/Product4_1.webp";
-import Product4_2 from "@/assets/images/product/Product4_2.webp";
-import Product4_3 from "@/assets/images/product/Product4_3.webp";
-import Product4_4 from "@/assets/images/product/Product4_4.webp";
-import Product4_5 from "@/assets/images/product/Product4_5.webp";
-import Product4_6 from "@/assets/images/product/Product4_6.webp";
+import Fresco_1 from "@/assets/images/product/Fresco_0.webp";
+import Fresco_2 from "@/assets/images/product/Fresco_1.webp";
+import Fresco_3 from "@/assets/images/product/Fresco_2.webp";
+import Fresco_4 from "@/assets/images/product/Fresco_3.webp";
+import Fresco_5 from "@/assets/images/product/Fresco_4.webp";
+import Atmosphere_1 from "@/assets/images/product/Atmosphere_0.webp";
+import Atmosphere_2 from "@/assets/images/product/Atmosphere_1.webp";
+import Atmosphere_3 from "@/assets/images/product/Atmosphere_2.webp";
+import Atmosphere_4 from "@/assets/images/product/Atmosphere_3.webp";
+import Atmosphere_5 from "@/assets/images/product/Atmosphere_4.webp";
+import Atmosphere_6 from "@/assets/images/product/Atmosphere_5.webp";
+import Caffe_1 from "@/assets/images/product/Caffe_0.webp";
+import Caffe_2 from "@/assets/images/product/Caffe_1.webp";
+import Caffe_3 from "@/assets/images/product/Caffe_2.webp";
+import Caffe_4 from "@/assets/images/product/Caffe_3.webp";
+import Caffe_5 from "@/assets/images/product/Caffe_4.webp";
+import Caffe_6 from "@/assets/images/product/Caffe_5.webp";
+import Caffe_7 from "@/assets/images/product/Caffe_6.webp";
+import Quanberri_1 from "@/assets/images/product/Quanberri_0.webp";
+import Quanberri_2 from "@/assets/images/product/Quanberri_1.webp";
+import Quanberri_3 from "@/assets/images/product/Quanberri_2.webp";
+import Quanberri_4 from "@/assets/images/product/Quanberri_3.webp";
+import Quanberri_5 from "@/assets/images/product/Quanberri_4.webp";
+import Quanberri_6 from "@/assets/images/product/Quanberri_5.webp";
 
-import Product5_1 from "@/assets/images/product/Product5_1.webp";
-import Product5_2 from "@/assets/images/product/Product5_2.webp";
-import Product5_3 from "@/assets/images/product/Product5_3.webp";
-import Product5_4 from "@/assets/images/product/Product5_4.webp";
-import Product5_5 from "@/assets/images/product/Product5_5.webp";
-import Product5_6 from "@/assets/images/product/Product5_6.webp";
+import Uxu_1 from "@/assets/images/product/Uxu_1.webp";
+import Uxu_2 from "@/assets/images/product/Uxu_2.webp";
+import Uxu_3 from "@/assets/images/product/Uxu_3.webp";
+import Uxu_4 from "@/assets/images/product/Uxu_4.webp";
+import Uxu_5 from "@/assets/images/product/Uxu_5.webp";
+import Uxu_6 from "@/assets/images/product/Uxu_6.webp";
 
 import { ref } from "vue";
 

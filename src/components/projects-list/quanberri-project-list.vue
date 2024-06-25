@@ -67,19 +67,19 @@
       :options="{ type: 'loop', gap: '20px', arrows: false, pagination: false }">
       <SplideSlide>
         <quanberri-mobile-product id="product-1" :image="Fresco_cropped" name="Производитель керамических изделий"
-          :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-mobile-product>
+          :tags="['Дизайн', 'Сайты', 'Брендинг']"  @click="galleries[0] = !galleries[0]"></quanberri-mobile-product>
       </SplideSlide>
       <SplideSlide>
         <quanberri-mobile-product id="product-2" :image="Atmosphere_cropped" name="Новый бренд event-пространства Atmosphere"
-          :tags="['Дизайн', 'Сайты']"></quanberri-mobile-product>
+          :tags="['Дизайн', 'Сайты']"  @click="galleries[1] = !galleries[1]"></quanberri-mobile-product>
       </SplideSlide>
       <SplideSlide>
         <quanberri-mobile-product id="product-3" :image="Caffe_cropped" name="CAFEE - новый формат кофейни"
-          :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-mobile-product>
+          :tags="['Дизайн', 'Сайты', 'Брендинг']"  @click="galleries[2] = !galleries[2]"></quanberri-mobile-product>
       </SplideSlide>
       <SplideSlide>
         <quanberri-mobile-product id="product-4" :image="Quanberri_cropped" name="Разработчик цифровых решений полного цикла"
-          :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-mobile-product>
+          :tags="['Дизайн', 'Сайты', 'Брендинг']"  @click="galleries[3] = !galleries[3]"></quanberri-mobile-product>
       </SplideSlide>
     </Splide>
 

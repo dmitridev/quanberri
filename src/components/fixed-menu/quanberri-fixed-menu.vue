@@ -10,7 +10,7 @@
       <div class="site-menu" ref="siteMenu" v-show="state.isShow">
         <a class="menu-block" href="/#projects"> Проекты </a>
         <a class="menu-block" href="/#our-experts"> Команда </a>
-        <a class="menu-block"> Контакты </a>
+        <a class="menu-block" href="#contacts"> Контакты </a>
         <span class="close-button" @click="closeMenu">&times;</span>
       </div>
     </div>
@@ -41,7 +41,7 @@ const closeMenu = () => {
   position: fixed;
   
   bottom: 30px;
-  z-index: 999999;
+  z-index: 9999;
 }
 
 .menu-button {

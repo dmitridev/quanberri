@@ -1,7 +1,7 @@
 <template>
-  <footer-desktop v-if="widthValue > 1280 " ></footer-desktop>
-  <footer-tablet v-else-if="widthValue<=800 && widthValue > 414"></footer-tablet>
-  <footer-mobile v-else-if="widthValue <= 414"></footer-mobile>
+  <footer-desktop id="contacts" v-if="widthValue > 1280 " ></footer-desktop>
+  <footer-tablet id="contacts" v-else-if="widthValue<=800 && widthValue > 414"></footer-tablet>
+  <footer-mobile id="contacts" v-else-if="widthValue <= 414"></footer-mobile>
 </template>
 
 <script setup>

@@ -1,0 +1,31 @@
+.field[data-type="text"] {
+    color: white;
+    display: flex;
+    flex-flow: column;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+
+    & span {
+        font-size: 18px;
+        line-height: 75px;
+    }
+
+    & input {
+        margin-top: 10px;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        max-width: 500px;
+    }
+
+    & textarea {
+        background: transparent;
+        resize: none;
+        border: none;
+        outline: none;
+        color: white;
+        height: 5em;
+        max-width: 500px;
+    }
+
+}

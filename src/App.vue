@@ -1,10 +1,8 @@
 <template>
+
   <!--header-->
-  <quanberri-container>
-    <quanberri-header-wrapper>
-      <quanberri-header></quanberri-header>
-    </quanberri-header-wrapper>
-  </quanberri-container>
+  <quanberri-header></quanberri-header>
+
 
   <quanberri-fixed-menu></quanberri-fixed-menu>
 
@@ -25,8 +23,12 @@
   </quanberri-container>
 
   <quanberri-container>
+    <quanberri-competencies/>
+  </quanberri-container>
+  
+  <quanberri-container>
     <quanberri-projects-list-wrapper>
-      <quanberri-project-list ></quanberri-project-list>
+      <quanberri-project-list></quanberri-project-list>
     </quanberri-projects-list-wrapper>
   </quanberri-container>
 
@@ -49,7 +51,7 @@
   <quanberri-our-experts-list-wrapper>
     <quanberri-our-experts></quanberri-our-experts>
   </quanberri-our-experts-list-wrapper>
-  
+
 
   <quanberri-footer></quanberri-footer>
 </template>
@@ -66,7 +68,6 @@ import quanberriVideoBlock from "@/components/video-block/quanberri-video-block.
 import quanberriFooter from "@/components/footer/quanberri-footer.vue";
 import QuanberriOurExpertsHeader from "@/components/our-experts/quanberri-our-experts-header.vue";
 import QuanberriAdvantages from "@/components/advangates/quanberri-advantages.vue";
-import QuanberriHeaderWrapper from "@/components/header/quanberri-header-wrapper.vue";
 import quanberriMainTextWrapper from "@/components/main-text/quanberri-main-text-wrapper.vue";
 import QuanberriVideoBlockWrapper from "@/components/video-block/quanberri-video-block-wrapper.vue";
 import QuanberriOurMissionWrapper from "@/components/our-mission/quanberri-our-mission-wrapper.vue";
@@ -76,7 +77,7 @@ import quanberriCompaniesWrapper from "@/components/companies/quanberri-companie
 import quanberriOurExpertsWrapper from "@/components/our-experts/quanberri-our-experts-wrapper.vue";
 import quanberriOurExpertsListWrapper from "@/components/our-experts/quanberri-our-experts-list-wrapper.vue";
 import quanberriFixedMenu from '@/components/fixed-menu/quanberri-fixed-menu.vue';
+import quanberriCompetencies from "./components/competitions/quanberri-competencies.vue";
 </script>
 
-<style src="@/global.css">
-</style>
+<style src="@/global.css"></style>

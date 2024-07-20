@@ -17,7 +17,7 @@
                 <img src="@/assets/images/buttons/circle-button-left.svg" alt="" />
             </button>
             <Splide ref="splide_in_gallery"
-                :options="{ type: loop, gap: 40, autoWidth: true, focus: 'center', trimSpace: false, prev: '.slider-images .button-left', next: '.slider-images .button-right' }"
+                :options="{ type: loop, gap: 120, autoWidth: true, focus: 'center', trimSpace: false, prev: '.slider-images .button-left', next: '.slider-images .button-right' }"
                 @splide:moved="watchForCurrentSlide">
                 <SplideSlide v-for="image in props.images" :key="image">
                     <div class="product-img-slide"><img :src="image" /></div>
@@ -164,8 +164,7 @@ body:has(.product-gallery.clicked) {
 
 .product-img-slide img {
     object-fit: contain;
-    width: min(1000px, 100vw);
-    border-radius: 10px;
+    max-width:700px;
 }
 
 .product-gallery .header {

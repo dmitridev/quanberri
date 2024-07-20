@@ -168,7 +168,7 @@ h1.brand-text {
 
 .face img {
   max-width: 273px;
-  border-radius: 32px;
+  /*border-radius: 32px;*/
 }
 
 .face .explain {
@@ -278,8 +278,12 @@ ul.menu a {
   gap: 50px;
 }
 
+.social-networks a img{
+  width:35px;
+}
+
 .text-logo {
-  font-size: 30px;
+  font-size: 23px;
 }
 
 .hidden-on-desktop {

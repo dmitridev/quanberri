@@ -5,17 +5,18 @@
                 <h2>Обсудить проект или договориться о встрече</h2>
                 <button @click="model = false"><img src="@/assets/images/buttons/button-close.svg"></button>
             </header>
-            <form name="form-for-project-start">
+            <form name="form-for-project-start" @submit.prevent="formSubmit(state)" ref="form_ref">
+                
                 <div class="column">
                     <strong class="fields-header headers-field">Контактные данные</strong>
-                    <quanberri-form-input v-model="state.name" ref="field_name" />
-                    <quanberri-form-input v-model="state.email" ref="field_email" />
-                    <quanberri-form-input v-model="state.phone" ref="field_phone" />
-                    <quanberri-form-input v-model="state.company" ref="field_company" />
-                    <quanberri-form-textarea v-model="state.message" ref="field_message" />
+                    <quanberri-form-input formName="name" name="Имя и Фамилия" v-model="state.name" ref="field_name" />
+                    <quanberri-form-input formName="email" name="Почта" v-model="state.email" ref="field_email" />
+                    <quanberri-form-input formName="phone" name="Телефон" v-model="state.phone" ref="field_phone" />
+                    <quanberri-form-input formName="company" name="Компания" v-model="state.company" ref="field_company" />
+                    <quanberri-form-textarea formName="message" name="Сообщение" v-model="state.message" ref="field_message" />
                 </div>
+                
                 <div class="column">
-
                     <strong>Услуги</strong>
                     <div class="field" data-type="select" ref="field_services">
                         <div class="choices">
@@ -23,7 +24,7 @@
                                 v-for="(value, name) in servicesFieldChoices" :key="name" :name="value"
                                 @click="toggleElement(state.services, name)">{{ value }}</span>
                         </div>
-                        <select name="" v-show="false" multiple v-model="state.services">
+                        <select name="services" v-show="false" multiple v-model="state.services">
                             <option v-for="(value, name) in servicesFieldChoices" :key="name" :name="value">{{ name }}
                             </option>
                         </select>
@@ -36,7 +37,7 @@
                                 v-for="(value, name) in budgetFieldChoices" :key="name" :name="name"
                                 @click="toggleBudget(state.budget, name)">{{ value }}</span>
                         </div>
-                        <select name="" v-show="false" v-model="state.budget">
+                        <select name="budget" v-show="false" v-model="state.budget">
                             <option v-for="(value, name) in budgetFieldChoices" :key="name" :name="value">{{ value }}
                             </option>
                         </select>
@@ -53,17 +54,18 @@
                                 <p class="hidden-description">Можно загрузить один файл максимум 15мб</p>
                             </div>
                         </div>
-                        <input type="file" name="file" v-show="false" ref="file_ref" />
+                        <input type="file" name="file" @change="set_file" v-show="false" ref="file_ref" />
                     </div>
 
 
                     <div class="field" data-type="checkbox" ref="field_confidential">
                         <input type="checkbox" name="confidential" v-show="false" v-model="state.submit_disabled">
-                        <button type="button" class="checkbox-view" @click="state.submit_disabled = !state.submit_disabled">
+                        <button type="button" class="checkbox-view"
+                            @click="state.submit_disabled = !state.submit_disabled">
                             <template v-if="state.submit_disabled == false">
-                                <img class="check" src="@/assets/images/buttons/button-close.svg" alt="Подтверждение"/>
+                                <img class="check" src="@/assets/images/buttons/button-close.svg" alt="Подтверждение" />
                             </template>
-                            <template v-else >
+                            <template v-else>
 
                             </template>
                         </button>
@@ -73,7 +75,8 @@
                         </p>
                     </div>
 
-                    <input :class="{'input_active': !state.submit_disabled,'submit':true}"  type="submit" value="Отправить" :disabled="state.submit_disabled">
+                    <input :class="{ 'input_active': !state.submit_disabled, 'submit': true }" type="submit"
+                        value="Отправить" :disabled="state.submit_disabled">
                 </div>
             </form>
         </div>
@@ -141,7 +144,51 @@ const toggleBudget = (arr, element) => {
 }
 
 const file_ref = ref();
+const form_ref = ref();
 
+const formSubmit = async function (state) {
+    let fields = {
+        'name': { name: state.name, error: 'Проверьте поле "имя"', predicate(field) { return !!field } },
+        'email': { name: state.email, error: 'Проверьте поле "почта"', predicate: (email) => !!email },
+        'phone': { name: state.phone, error: 'Проверьте поле "Телефон"', predicate: (phone) => !!phone },
+        'message': { name: state.message, error: 'Проверьте поле "Сообщение"', predicate: (message) => !!message },
+        'services': { name: state.services, error: 'Выберите хотя бы один пункт в поле "Услуги"', predicate: (services) => services.length > 0 },
+        'budget': { name: state.budget, error: 'На какой бюджет вы рассчитываете?', predicate: (budget) => budget.length == 1 },
+        'file': { name: file_ref.value.files[0], error: 'нет тз', predicate(file) { return file } }
+    }
+
+    const checkField = function ({ name = '', error = '', predicate = () => { } }) {
+        if (!predicate(name)) {
+            throw new Error(error)
+        }
+
+        return true;
+    }
+
+    for (let [key, field] of Object.entries(fields)) {
+        console.log('check field', key, field);
+        checkField(field)
+    }
+
+    const formData = new FormData(form_ref.value);
+    formData.set('budget',state.budget[0]);
+    formData.set('services',JSON.stringify(state.services));
+    try {
+        const request = await fetch('/mail.php', {
+            method: 'POST',
+            body: formData
+        })
+
+        const text = await request.text();
+        console.log(text);
+    }catch(e){
+        console.log(e);
+    }
+}
+
+const set_file = (event) => {
+    console.log(event.target.files);
+}
 
 </script>
 
@@ -207,9 +254,10 @@ $unactiveColor: rgba(255, 255, 255, .5);
 
 
 
-.field .check{
-    width:100%;
+.field .check {
+    width: 100%;
 }
+
 .column {
     display: flex;
     flex-flow: column;
@@ -312,8 +360,8 @@ $unactiveColor: rgba(255, 255, 255, .5);
     max-width: 250px;
 }
 
-.submit.input_active{
-    border:1px solid white;
-    color:white;
+.submit.input_active {
+    border: 1px solid white;
+    color: white;
 }
 </style>

@@ -52,7 +52,7 @@
         </SplideSlide>
         <SplideSlide>
             <div class="face">
-                <img src="@/assets/images/face/face-5.jpg" alt="Victa Wille">
+                <img src="@/assets/images/face/face-6.jpg" alt="Victa Wille">
                 <div class="explain">
                     <p>Victa Wille</p>
                     <p>Digital Designer</p>
@@ -62,7 +62,7 @@
         </SplideSlide>
         <SplideSlide>
             <div class="face">
-                <img src="@/assets/images/face/face-6.jpg" alt="София Ефименко">
+                <img src="@/assets/images/face/face-5.jpg" alt="София Ефименко">
                 <div class="explain">
                     <p>София Ефименко</p>
                     <p>Brand Designer</p>

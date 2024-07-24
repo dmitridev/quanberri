@@ -17,12 +17,6 @@
   </quanberri-video-block-wrapper>
 
   <quanberri-container>
-    <quanberri-our-mission-wrapper>
-      <quanberri-our-mission></quanberri-our-mission>
-    </quanberri-our-mission-wrapper>
-  </quanberri-container>
-
-  <quanberri-container>
     <quanberri-competencies/>
   </quanberri-container>
   
@@ -62,7 +56,6 @@ import quanberriCompanies from "@/components/companies/quanberri-companies.vue";
 import quanberriHeader from "@/components/header/quanberri-header.vue";
 import quanberriMainText from "@/components/main-text/quanberri-main-text.vue";
 import quanberriOurExperts from "@/components/our-experts/quanberri-our-experts.vue";
-import quanberriOurMission from "@/components/our-mission/quanberri-our-mission.vue";
 import QuanberriProjectList from "@/components/projects-list/quanberri-project-list.vue";
 import quanberriVideoBlock from "@/components/video-block/quanberri-video-block.vue";
 import quanberriFooter from "@/components/footer/quanberri-footer.vue";
@@ -70,7 +63,6 @@ import QuanberriOurExpertsHeader from "@/components/our-experts/quanberri-our-ex
 import QuanberriAdvantages from "@/components/advangates/quanberri-advantages.vue";
 import quanberriMainTextWrapper from "@/components/main-text/quanberri-main-text-wrapper.vue";
 import QuanberriVideoBlockWrapper from "@/components/video-block/quanberri-video-block-wrapper.vue";
-import QuanberriOurMissionWrapper from "@/components/our-mission/quanberri-our-mission-wrapper.vue";
 import quanberriProjectsListWrapper from "@/components/projects-list/quanberri-projects-list-wrapper.vue";
 import quanberriAdvantagesWrapper from "@/components/advangates/quanberri-advantages-wrapper.vue";
 import quanberriCompaniesWrapper from "@/components/companies/quanberri-companies-wrapper.vue";

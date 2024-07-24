@@ -58,6 +58,7 @@
     color:white;
     font-size:51px;
     margin-bottom:50px;
+    margin-top:50px;
 }
 
 .competencies {

@@ -56,7 +56,7 @@
 <style lang="scss" scoped>
 .competencies-header {
     color:white;
-    font-size:51px;
+    font-size:max(4vw,20px);
     margin-bottom:50px;
     margin-top:50px;
 }
@@ -66,14 +66,16 @@
     flex-flow: row wrap;
     gap: 11px;
     row-gap: 74px;
+    justify-content:space-between;
 
     & .competence {
         position: relative;
         display: flex;
         flex-flow: row;
-        width: 380px;
+        width: 20vw;
         background: #191919;
         padding: 20px;
+        justify-content:center;
         border-radius: 15px;
 
         & div {
@@ -82,11 +84,11 @@
             flex-flow: column wrap;
 
             & h3 {
-                font-size: 34px;
+                font-size: 1.8vw; //19.2px = 1vw
             }
 
             & p {
-                font-size: 18px;
+                font-size: 1vw;
                 font-weight: 100;
                 margin-bottom: 35px;
             }
@@ -94,11 +96,29 @@
         }
 
         & img {
-            width: 89px;
-            height: 89px;
+            width: 4.63vw; // 19.2px = 1vw;
+            height: 4.63vw;
 
             position: relative;
             top: -50px;
+        }
+    }
+
+    @media screen and (max-width:500px){
+        .competence{
+            width:100%;
+            & h3{
+                font-size:6vw!important;
+            }
+
+            & p{
+                font-size:5vw!important;
+            }
+
+            & img{
+                width:89px;
+                height:89px;
+            }
         }
     }
 }

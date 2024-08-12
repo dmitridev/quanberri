@@ -50,18 +50,6 @@
             @click="galleries[2] = !galleries[2]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
         </div>
       </SplideSlide>
-      <SplideSlide>
-        <div class="product-list">
-          <quanberri-product width="39.4" height="43.7" id="product-1" :image="Quanberri_cropped" name="Разработчик цифровых решений полного цикла"
-            @click="galleries[3] = !galleries[3]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
-          <quanberri-product width="39.4" height="43.7" id="product-2" :image="Uxu_cropped" name="Uxu"
-            @click="galleries[4] = !galleries[4]" :tags="['Дизайн', 'Сайты']"></quanberri-product>
-          <quanberri-product width="39.4" height="43.7" id="product-3" :image="Fresco_cropped" name="Производитель керамических изделий"
-            @click="galleries[0] = !galleries[0]" :tags="['Дизайн', 'Сайты', 'Брендинг']"></quanberri-product>
-          <quanberri-product width="39.4" height="43.7" id="product-4" :image="Atmosphere_cropped" name="Новый бренд event-пространства Atmosphere"
-            @click="galleries[0] = !galleries[0]" :tags="['Дизайн', 'Сайты']"></quanberri-product>
-        </div>
-      </SplideSlide>
     </Splide>
     <Splide ref="splideMobile" v-else-if="widthValue <= 414"
       :options="{ type: 'loop', gap: '20px', arrows: false, pagination: false }">

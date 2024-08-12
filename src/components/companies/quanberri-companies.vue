@@ -1,7 +1,7 @@
 <template>
   <div class="companies">
     <div class="companies-header">
-      <h2>Работали с такими компаниями</h2>
+      <h2>Нам доверяют</h2>
       <div class="buttons" v-if="widthValue > 414">
         <button ref="buttonLeft" @click="clickLeftButton" class="button-left" style="opacity: 0.2">
           <img src="@/assets/images/buttons/circle-button-left.svg" alt="" />

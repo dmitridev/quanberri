@@ -5,15 +5,15 @@
     <div class="competencies">
         <div class="competence">
             <div>
-                <h3>Исследование продукта</h3>
-                <p>Находим точки роста бизнеса, строя и анализируя множество гипотез</p>
+                <h3>Анализ  продукта</h3>
+                <p>Мы исследуем бизнес, выявляем потенциальные точки роста и анализируем множество гипотез.</p>
             </div>
             <img src="@/assets/images/competencies/product-research.svg" alt="Исследование продукта">
         </div>
         <div class="competence">
             <div>
                 <h3>Создание продукта</h3>
-                <p>Разрабатываем любые цифровые сервисы от идеи до готового продукта</p>
+                <p>Разрабатываем цифровые сервисы с нуля, начиная с идеи и заканчивая готовым продуктом</p>
             </div>
             <img src="@/assets/images/competencies/product-create.svg" alt="Создание продукта">
 
@@ -21,7 +21,7 @@
         <div class="competence">
             <div>
                 <h3>Поддержка и развитие</h3>
-                <p>Совершенствуем продукт на основе полученного опыта и сутуации на рынке</p>
+                <p>Постоянно совершенствуем продукт, учитывая опыт и текущую ситуацию на рынке</p>
             </div>
             <img src="@/assets/images/competencies/product-support-and-development.svg" alt="Поддержка и развитие">
 
@@ -29,7 +29,7 @@
         <div class="competence">
             <div>
                 <h3>Визуальная коммуникация</h3>
-                <p>Создаем запоминающиеся визуальные образы со смыслом</p>
+                <p>Создаем запоминающиеся визуальные образы с глубоким смыслом</p>
             </div>
 
             <img src="@/assets/images/competencies/visual-communication.svg" alt="Визуальная коммуникация">
@@ -37,7 +37,7 @@
         <div class="competence">
             <div>
                 <h3>Цифровизация бизнеса</h3>
-                <p>Оптимизируем бизнес-процессы, внедряя цифровые технологий</p>
+                <p>Оптимизируем бизнес-процессы, внедряя цифровые технологии</p>
             </div>
             <img src="@/assets/images/competencies/digitalization.svg" alt="Цифровизация бизнеса">
 
@@ -45,7 +45,7 @@
         <div class="competence">
             <div>
                 <h3>Аутстаффинг специалистов</h3>
-                <p>Предоставляем IT-специалистов под конкретные задачи</p>
+                <p>Предоставляем IT-специалистов для конкретных задач</p>
             </div>
             <img src="@/assets/images/competencies/outstaffing-of-business.svg" alt="Аутстаффинг специалистов">
 
@@ -56,7 +56,7 @@
 <style lang="scss" scoped>
 .competencies-header {
     color:white;
-    font-size:max(4vw,20px);
+    font-size:max(2.7vw,20px);
     margin-bottom:50px;
     margin-top:50px;
 }
@@ -74,7 +74,7 @@
         flex-flow: row;
         width: 20vw;
         background: #191919;
-        padding: 20px;
+        padding: 15px;
         justify-content:center;
         border-radius: 15px;
 

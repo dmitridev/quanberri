@@ -29,9 +29,7 @@
         </div>
         <div class="info">
           <div class="info--links">
-            <a class="info--link" href="#"
-              >Политика обработки персональных данных</a
-            >
+            <a class="info--link" href="#">Политика обработки персональных данных</a>
             <p class="info--link">
               По вопросам работы с персональными данными и подписками пишите на
               <a href="mailto:quanberri@gmail.com">quanberri@gmail.com</a>
@@ -42,19 +40,14 @@
       <div class="info--company-social-networks">
         <p class="text-logo">© quanberri, 2024</p>
         <div class="social-networks">
-          <a href="#">
-            <img src="@/assets/images/footer/behance.svg" />
-          </a>
-          <a href="#">
+          <a :href="props.links.dprofile">
             <img src="@/assets/images/footer/drpfile.svg" />
           </a>
-          <a href="#">
-            <img src="@/assets/images/footer/dzen.svg" alt="" />
+          <a :href="props.links.vk"> 
+            <img src="@/assets/images/footer/vk.svg" /></a>
+          <a :href="props.links.bot">
+            <img src="@/assets/images/footer/telegram.svg" alt="" />
           </a>
-          <a href="#"> <img src="@/assets/images/footer/vk.svg" /></a>
-          <a href="#">
-            <img src="@/assets/images/footer/telegram.svg" alt=""
-          /></a>
         </div>
       </div>
     </div>
@@ -63,13 +56,15 @@
 
 
 <script setup>
-  import { ref } from "vue";
-  const hoverAnimate = ref();
-  function onMouseMove(){
-    hoverAnimate.value.scrollTo(0,200);
-  }
+import { ref, defineProps } from "vue";
+const props = defineProps(['links'])
+const hoverAnimate = ref();
 
-  function onMouseLeave(){
-    hoverAnimate.value.scrollTo(0,0);
-  }
+function onMouseMove() {
+  hoverAnimate.value.scrollTo(0, 200);
+}
+
+function onMouseLeave() {
+  hoverAnimate.value.scrollTo(0, 0);
+}
 </script>

@@ -2,8 +2,6 @@
 
   <!--header-->
   <quanberri-header></quanberri-header>
-
-
   <quanberri-fixed-menu></quanberri-fixed-menu>
 
   <quanberri-container>

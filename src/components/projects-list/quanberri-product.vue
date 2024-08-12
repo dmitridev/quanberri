@@ -26,9 +26,7 @@ const props = defineProps(["id", "image", "name", "tags", 'width', 'height']);
 onMounted(async () => {
   const m4 = twgl.m4;
   const gl = productImgRef.value.getContext("webgl");
-
-  productImgRef.value.style = `max-width:100%;max-height:757px;width:${props.width}px;height:${props.height}px`;
-
+  productImgRef.value.style = `max-width:100%;max-height:70.09vh;width:${props.width}vw;height:${props.height}vh`;
   const vs = `
 attribute vec4 position;
 attribute vec3 displacement;
@@ -117,7 +115,7 @@ void main() {
     currentTime = time;
 
     twgl.resizeCanvasToDisplaySize(gl.canvas);
-    gl.viewport(0, 0, props.width, props.height);
+    gl.viewport(0, 0, props.width * (window.width/100), window.height * (props.width));
     gl.useProgram(programInfo.program);
 
     //var aspect = img.width / img.height;
@@ -142,6 +140,7 @@ void main() {
 
     requestAnimationFrame(render);
   }
+
   requestAnimationFrame(render);
 
   const displace = new Float32Array(3);

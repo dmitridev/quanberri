@@ -149,8 +149,8 @@ h1.brand-text {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  row-gap: 160px;
-  column-gap: 200px;
+  row-gap: 8.33vw;
+  column-gap: 10.41vh;
 }
 
 .our-peoples-header {

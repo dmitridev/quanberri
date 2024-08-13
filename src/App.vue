@@ -1,53 +1,55 @@
 <template>
+  <template v-if="loaded">
 
-  <!--header-->
-  <quanberri-header></quanberri-header>
-  <quanberri-fixed-menu></quanberri-fixed-menu>
+    <!--header-->
+    <quanberri-header></quanberri-header>
+    <quanberri-fixed-menu></quanberri-fixed-menu>
 
-  <quanberri-container>
-    <quanberri-main-text-wrapper>
-      <quanberri-main-text></quanberri-main-text>
-    </quanberri-main-text-wrapper>
-  </quanberri-container>
+    <quanberri-container>
+      <quanberri-main-text-wrapper>
+        <quanberri-main-text></quanberri-main-text>
+      </quanberri-main-text-wrapper>
+    </quanberri-container>
 
-  <quanberri-video-block-wrapper>
-    <quanberri-video-block></quanberri-video-block>
-  </quanberri-video-block-wrapper>
+    <quanberri-video-block-wrapper>
+      <quanberri-video-block></quanberri-video-block>
+    </quanberri-video-block-wrapper>
 
-  <quanberri-container>
-    <quanberri-competencies/>
-  </quanberri-container>
-  
-  <quanberri-container>
-    <quanberri-projects-list-wrapper>
-      <quanberri-project-list></quanberri-project-list>
-    </quanberri-projects-list-wrapper>
-  </quanberri-container>
+    <quanberri-container>
+      <quanberri-competencies />
+    </quanberri-container>
 
-  <quanberri-advantages-wrapper>
-    <quanberri-advantages></quanberri-advantages>
-  </quanberri-advantages-wrapper>
+    <quanberri-container>
+      <quanberri-projects-list-wrapper>
+        <quanberri-project-list></quanberri-project-list>
+      </quanberri-projects-list-wrapper>
+    </quanberri-container>
 
-  <quanberri-container>
-    <quanberri-companies-wrapper>
-      <quanberri-companies></quanberri-companies>
-    </quanberri-companies-wrapper>
-  </quanberri-container>
+    <quanberri-advantages-wrapper>
+      <quanberri-advantages></quanberri-advantages>
+    </quanberri-advantages-wrapper>
 
-  <quanberri-container>
-    <quanberri-our-experts-wrapper>
-      <quanberri-our-experts-header></quanberri-our-experts-header>
-    </quanberri-our-experts-wrapper>
-  </quanberri-container>
+    <quanberri-container>
+      <quanberri-companies-wrapper>
+        <quanberri-companies></quanberri-companies>
+      </quanberri-companies-wrapper>
+    </quanberri-container>
 
-  <quanberri-our-experts-list-wrapper>
-    <quanberri-our-experts></quanberri-our-experts>
-  </quanberri-our-experts-list-wrapper>
+    <quanberri-container>
+      <quanberri-our-experts-wrapper>
+        <quanberri-our-experts-header></quanberri-our-experts-header>
+      </quanberri-our-experts-wrapper>
+    </quanberri-container>
 
-
-  <quanberri-footer></quanberri-footer>
+    <quanberri-our-experts-list-wrapper>
+      <quanberri-our-experts></quanberri-our-experts>
+    </quanberri-our-experts-list-wrapper>
+    <quanberri-footer></quanberri-footer>
+  </template>
+  <template v-if="!loaded">
+    <img src="@/assets/images/preloader/loader.gif" style="width:100%;height:100vh;object-fit:contain;animation:opacity 3s infinite ease-in-out"/>
+  </template>
 </template>
-
 <script setup>
 import QuanberriContainer from "@/components/utility/quanberi-container.vue";
 import quanberriCompanies from "@/components/companies/quanberri-companies.vue";
@@ -68,6 +70,27 @@ import quanberriOurExpertsWrapper from "@/components/our-experts/quanberri-our-e
 import quanberriOurExpertsListWrapper from "@/components/our-experts/quanberri-our-experts-list-wrapper.vue";
 import quanberriFixedMenu from '@/components/fixed-menu/quanberri-fixed-menu.vue';
 import quanberriCompetencies from "./components/competitions/quanberri-competencies.vue";
+import { onMounted,ref } from "vue";
+
+const loaded = ref(false)
+onMounted(() => { 
+  window.addEventListener('load',() => setTimeout(() => loaded.value = true,1500))
+})
+
 </script>
 
 <style src="@/global.css"></style>
+
+<style>
+  @keyframes opacity{
+    0%{
+      opacity:50%
+    }
+    50%{
+      opacity:100%;
+    }
+    100%{
+      opacity:50%;
+    }
+  }
+</style>

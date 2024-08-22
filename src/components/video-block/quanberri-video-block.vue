@@ -5,7 +5,6 @@
         loop
         autoplay
         muted
-        poster="@/assets/images/video-block/video-preloader.png"
       ></video>
     </div>
 </template>

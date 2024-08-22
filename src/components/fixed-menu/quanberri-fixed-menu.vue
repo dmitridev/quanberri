@@ -11,7 +11,7 @@
         <a class="menu-block" href="/#projects"> Проекты </a>
         <a class="menu-block" href="/#our-experts"> Команда </a>
         <a class="menu-block" href="#contacts"> Контакты </a>
-        <span class="close-button" @click="closeMenu">&times;</span>
+        <span class="close-button" @click="closeMenu"><img src="@/assets/images/buttons/button-close.svg"></span>
       </div>
     </div>
   </div>
@@ -32,14 +32,14 @@ const closeMenu = () => {
 };
 </script>
 
-<style scoped>
+<style>
 .site-menu-container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
-  
+
   bottom: 30px;
   z-index: 9999;
 }
@@ -103,5 +103,15 @@ const closeMenu = () => {
 .site-menu img {
   width: 100%;
   border-radius: 8px;
+}
+
+@media screen and (max-width:768px) {
+  .site-menu{
+    flex-direction:column;
+  }
+
+  .social-networks{
+    z-index:1!important;
+  }
 }
 </style>

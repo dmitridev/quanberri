@@ -47,7 +47,7 @@
     <quanberri-footer></quanberri-footer>
   </template>
   <template v-if="!loaded">
-    <img src="@/assets/images/preloader/loader.gif" style="width:100%;height:100vh;object-fit:contain;animation:opacity 3s infinite ease-in-out"/>
+    <img src="@/assets/images/preloader/loader.gif" style="width:100%;height:100vh;object-fit:contain;animation:opacity 3s infinite ease-in-out" />
   </template>
 </template>
 <script setup>
@@ -74,7 +74,7 @@ import { onMounted,ref } from "vue";
 
 const loaded = ref(false)
 onMounted(() => { 
-  window.addEventListener('load',() => setTimeout(() => loaded.value = true,1500))
+  window.addEventListener('load',() => setTimeout(() => loaded.value = true,1000))
 })
 
 </script>

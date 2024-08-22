@@ -12,6 +12,7 @@
     "@splidejs/vue-splide": "^0.6.12",
     "@vueuse/core": "^10.9.0",
     "core-js": "^3.8.3",
+    "node-fetch": "^3.3.2",
     "pixi.js": "^8.1.5",
     "twgl.js": "^5.5.4",
     "vue": "^3.2.13",

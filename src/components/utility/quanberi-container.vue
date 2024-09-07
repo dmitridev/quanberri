@@ -26,7 +26,7 @@
   }
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 500px) {
   :root {
     --margin-size: 52px;
   }

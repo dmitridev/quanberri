@@ -51,7 +51,7 @@
     
   }
   
-  @media screen and (max-width: 415px) {
+  @media screen and (max-width: 500px) {
     .product,
     .product .full-sized-canvas {
       width: 100%;

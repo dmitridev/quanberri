@@ -42,7 +42,7 @@
     </Splide>
 
     <Splide ref="splideTab" :options="{ arrows: false, pagination: false, loop: true, perPage: 2, gap: '20px' }"
-      v-else-if="widthValue <= 768 && widthValue > 414" @splide:moved="WatchForCurrentSlide">
+      v-else-if="widthValue <= 768 && widthValue > 514" @splide:moved="WatchForCurrentSlide">
       <SplideSlide>
         <div class="companies-list">
           <quanberri-company :image="Company1"></quanberri-company>
@@ -76,7 +76,7 @@
     </Splide>
 
     <Splide ref="splideMobile" :options="{ arrows: false, pagination: false, perPage: 1, gap: '20px' }"
-      v-else-if="widthValue <= 414" @splide:moved="WatchForCurrentSlide">
+      v-else-if="widthValue <= 514" @splide:moved="WatchForCurrentSlide">
       <SplideSlide>
         <quanberri-company :image="Company1"></quanberri-company>
       </SplideSlide>

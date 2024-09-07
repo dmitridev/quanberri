@@ -2,7 +2,7 @@
   <quanberri-container>
     <quanberri-header-wrapper>
       <header>
-        <img src="@/assets/images/header/header-logo.svg" />
+        <img class="quanberri-logo" src="@/assets/images/header/header-logo.svg" />
         <button @click="state.formStart = true" class="button-start-project">Начать проект<img
             class="button-start-project__img" src="@/assets/images/buttons/arrow-top-right-corner.svg" /></button>
       </header>
@@ -39,7 +39,6 @@ header button {
   display: flex;
   align-items: center;
   gap: 10px;
-
-
 }
+
 </style>

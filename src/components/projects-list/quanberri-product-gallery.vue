@@ -129,6 +129,7 @@ function watchForCurrentSlide(_, index) {
     transition: all 5s ease-in-out;
     animation: showGallery 1s forwards;
     border-radius: 10px;
+    z-index:9999;
 }
 
 .product-gallery.clicked {

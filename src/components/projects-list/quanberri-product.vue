@@ -229,13 +229,20 @@ canvas {
   margin-bottom: 47px;
 }
 
+@media screen and (width < 1550px ) and ( width > 600px ){
+  .product-img{
+    width:38vw!important;
+  }
+}
+
+
 @media screen and (max-width: 768px) {
   .product .explain {
     display: none;
   }
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 500px) {
 
   .product,
   .product .full-sized-canvas {

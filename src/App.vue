@@ -24,11 +24,11 @@
         <quanberri-project-list></quanberri-project-list>
       </quanberri-projects-list-wrapper>
     </quanberri-container>
-
+<!--
     <quanberri-advantages-wrapper>
       <quanberri-advantages></quanberri-advantages>
     </quanberri-advantages-wrapper>
-
+-->
     <quanberri-container>
       <quanberri-companies-wrapper>
         <quanberri-companies></quanberri-companies>
@@ -47,7 +47,7 @@
     <quanberri-footer></quanberri-footer>
   </template>
   <template v-if="!loaded">
-    <img src="@/assets/images/preloader/loader.gif" style="width:100%;height:100vh;object-fit:contain;animation:opacity 3s infinite ease-in-out" />
+    <img src="@/assets/images/preloader/loader.gif" class="site-preloader" />
   </template>
 </template>
 <script setup>
@@ -60,21 +60,21 @@ import QuanberriProjectList from "@/components/projects-list/quanberri-project-l
 import quanberriVideoBlock from "@/components/video-block/quanberri-video-block.vue";
 import quanberriFooter from "@/components/footer/quanberri-footer.vue";
 import QuanberriOurExpertsHeader from "@/components/our-experts/quanberri-our-experts-header.vue";
-import QuanberriAdvantages from "@/components/advangates/quanberri-advantages.vue";
+//import QuanberriAdvantages from "@/components/advangates/quanberri-advantages.vue";
 import quanberriMainTextWrapper from "@/components/main-text/quanberri-main-text-wrapper.vue";
 import QuanberriVideoBlockWrapper from "@/components/video-block/quanberri-video-block-wrapper.vue";
 import quanberriProjectsListWrapper from "@/components/projects-list/quanberri-projects-list-wrapper.vue";
-import quanberriAdvantagesWrapper from "@/components/advangates/quanberri-advantages-wrapper.vue";
+//import quanberriAdvantagesWrapper from "@/components/advangates/quanberri-advantages-wrapper.vue";
 import quanberriCompaniesWrapper from "@/components/companies/quanberri-companies-wrapper.vue";
 import quanberriOurExpertsWrapper from "@/components/our-experts/quanberri-our-experts-wrapper.vue";
 import quanberriOurExpertsListWrapper from "@/components/our-experts/quanberri-our-experts-list-wrapper.vue";
 import quanberriFixedMenu from '@/components/fixed-menu/quanberri-fixed-menu.vue';
 import quanberriCompetencies from "./components/competitions/quanberri-competencies.vue";
-import { onMounted,ref } from "vue";
+import { onMounted, ref } from "vue";
 
 const loaded = ref(false)
-onMounted(() => { 
-  window.addEventListener('load',() => setTimeout(() => loaded.value = true,1000))
+onMounted(() => {
+  window.addEventListener('load', () => setTimeout(() => loaded.value = true, 1000))
 })
 
 </script>
@@ -82,15 +82,26 @@ onMounted(() => {
 <style src="@/global.css"></style>
 
 <style>
-  @keyframes opacity{
-    0%{
-      opacity:50%
-    }
-    50%{
-      opacity:100%;
-    }
-    100%{
-      opacity:50%;
-    }
+
+.site-preloader{
+  width:100%;
+  height:100vh;
+  object-fit:contain;
+  animation:opacity 3s infinite ease-in-out
+}
+
+
+@keyframes opacity {
+  0% {
+    opacity: 50%
   }
+
+  50% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 50%;
+  }
+}
 </style>

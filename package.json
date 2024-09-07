@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build && cp ./src/mail.php ./dist/mail.php && cp -r vendor/ dist/vendor",
+    "build": "vue-cli-service build && cp ./src/mobile-mail.php ./dist/mobile-mail.php && cp ./src/mail.php ./dist/mail.php && cp -r vendor/ dist/vendor",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -12,6 +12,7 @@
     "@splidejs/vue-splide": "^0.6.12",
     "@vueuse/core": "^10.9.0",
     "core-js": "^3.8.3",
+    "maska": "^3.0.2",
     "node-fetch": "^3.3.2",
     "pixi.js": "^8.1.5",
     "twgl.js": "^5.5.4",

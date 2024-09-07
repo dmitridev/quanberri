@@ -7,6 +7,10 @@
   background: url(@/assets/images/preloader/loader.gif) no-repeat center;
 }
 
+.error{
+  color:red;
+}
+
 :root {
   --max-width: 1200px;
   --font-color: white;
@@ -345,6 +349,8 @@ ul.menu a {
     --footer__desktop__phone--font-size: 30px;
     --footer__desktop__policy--font-size: 28px;
   }
+
+  
 }
 
 @media only screen and (max-width: 768px) {
@@ -378,7 +384,7 @@ ul.menu a {
   }
 }
 
-@media only screen and (max-width: 415px) {
+@media only screen and (max-width: 500px) {
   :root {
     --brand-text--font-size: 20.7px;
 
@@ -411,6 +417,14 @@ ul.menu a {
   .header__wrapper{
     padding-top:32px;
     width:100%;
+  }
+
+  header .quanberri-logo{
+    width:40%;
+  }
+
+  header .button-start-project{
+    font-size:20px!important;
   }
 
   h1.brand-text{

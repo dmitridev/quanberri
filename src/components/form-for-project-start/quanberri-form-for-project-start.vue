@@ -1,193 +1,87 @@
 <template>
-    <div class="form-wrapper" v-show="props.modelValue">
-        <div class="form-for-project-start">
-            <header>
-                <h2>Обсудить проект или договориться о встрече</h2>
-                <button @click="model = false"><img src="@/assets/images/buttons/button-close.svg"></button>
-            </header>
-            <form name="form-for-project-start" @submit.prevent="formSubmit(state)" ref="form_ref">
-                
-                <div class="column">
-                    <strong class="fields-header headers-field">Контактные данные</strong>
-                    <quanberri-form-input formName="name" name="Имя и Фамилия" v-model="state.name" ref="field_name" />
-                    <quanberri-form-input formName="email" name="Почта" v-model="state.email" ref="field_email" />
-                    <quanberri-form-input formName="phone" name="Телефон" v-model="state.phone" ref="field_phone" />
-                    <quanberri-form-input formName="company" name="Компания" v-model="state.company" ref="field_company" />
-                    <quanberri-form-textarea formName="message" name="Сообщение" v-model="state.message" ref="field_message" />
-                </div>
-                
-                <div class="column">
-                    <strong>Услуги</strong>
-                    <div class="field" data-type="select" ref="field_services">
-                        <div class="choices">
-                            <span :class="{ 'active': state.services.includes(name) }"
-                                v-for="(value, name) in servicesFieldChoices" :key="name" :name="value"
-                                @click="toggleElement(state.services, name)">{{ value }}</span>
-                        </div>
-                        <select name="services" v-show="false" multiple v-model="state.services">
-                            <option v-for="(value, name) in servicesFieldChoices" :key="name" :name="value">{{ name }}
-                            </option>
-                        </select>
-                    </div>
-
-                    <strong>Бюджет</strong>
-                    <div class="field" data-type="select" ref="field_budget">
-                        <div class="choices">
-                            <span :class="{ 'active': state.budget[0] == name }"
-                                v-for="(value, name) in budgetFieldChoices" :key="name" :name="name"
-                                @click="toggleBudget(state.budget, name)">{{ value }}</span>
-                        </div>
-                        <select name="budget" v-show="false" v-model="state.budget">
-                            <option v-for="(value, name) in budgetFieldChoices" :key="name" :name="value">{{ value }}
-                            </option>
-                        </select>
-                    </div>
-
-                    <strong>Загрузите свое ТЗ</strong>
-                    <div class="field" data-type="file" ref="field_file">
-                        <div class="file-view">
-                            <button type="button" @click="() => file_ref.click()">
-                                <img src="@/assets/images/buttons/button-plus.svg" alt="Добавить файл">
-                            </button>
-                            <div class="file-description-column">
-                                <p class="description">Добавить файл</p>
-                                <p class="hidden-description">Можно загрузить один файл максимум 15мб</p>
-                            </div>
-                        </div>
-                        <input type="file" name="file" @change="set_file" v-show="false" ref="file_ref" />
-                    </div>
-
-
-                    <div class="field" data-type="checkbox" ref="field_confidential">
-                        <input type="checkbox" name="confidential" v-show="false" v-model="state.submit_disabled">
-                        <button type="button" class="checkbox-view"
-                            @click="state.submit_disabled = !state.submit_disabled">
-                            <template v-if="state.submit_disabled == false">
-                                <img class="check" src="@/assets/images/buttons/button-close.svg" alt="Подтверждение" />
-                            </template>
-                            <template v-else>
-
-                            </template>
-                        </button>
-                        <p>Я прочитал <a href="#">политику обработки персональных данных</a> <br>и <a href="#">даю
-                                согласие
-                                на обработку своих данных</a>
-                        </p>
-                    </div>
-
-                    <input :class="{ 'input_active': !state.submit_disabled, 'submit': true }" type="submit"
-                        value="Отправить" :disabled="state.submit_disabled">
-                </div>
-            </form>
-        </div>
-    </div>
+    <template v-if="model && width > 900 && !formState.submitted">
+        <quanberri-form-desktop @close="model = false" @submitForm="(state) => onSubmit('desktop', state)"
+            :error="submitErrors.result" />
+    </template>
+    <template v-else-if="model && width < 900 && !formState.submitted">
+        <quanberri-form-mobile @close="model = false" @submitForm="(state) => onSubmit('mobile', state)"
+            :error="submitErrors.result" />
+    </template>
+    <template v-else-if="model && formState.submitted">
+        <quanberri-form-success @close="model = false" />
+    </template>
 </template>
 <script setup>
-import quanberriFormInput from '@/components/form-for-project-start/quanberri-form-input.vue'
-import quanberriFormTextarea from './quanberri-form-textarea.vue';
-import { defineEmits, defineProps, computed, reactive, ref } from 'vue';
 
+import { reactive, defineProps, computed, defineEmits } from 'vue';
+import { useWindowSize } from '@vueuse/core';
+import quanberriFormMobile from './mobile/quanberri-form-for-project-start-mobile.vue';
+import quanberriFormDesktop from './desktop/quanberri-form-for-project-start-desktop.vue';
+import quanberriFormSuccess from './success/form-success.vue';
+import { FormValidator } from '@/utils/formValidator.js';
+const formState = reactive({
+    submitted: false,
+    closed: false
+})
+
+const submitErrors = reactive({
+    result: {
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        message: '',
+        services: '',
+        budget: '',
+        file: '',
+    }
+});
+const width = useWindowSize().width;
 const emit = defineEmits(['update:modelValue'])
-const props = defineProps(['modelValue']);
 
+const props = defineProps(['modelValue']);
 const model = computed({
     get: () => props.modelValue,
     set: (value) => emit('update:modelValue', value)
 })
 
-const servicesFieldChoices = {
-    'ux-analisys': 'Ux-аналитика',
-    'ux-research': 'Ux-исследование',
-    'interface-design': 'Дизайн интерфейсов',
-    'web-design-and-integration': 'Веб-разработка и интеграции',
-    'develop': 'Разработка',
-    'another': 'Другое'
-}
 
-const budgetFieldChoices = {
-    'lt1m': 'Менее 1 млн',
-    '1-3m': '1 - 3 млн',
-    '3-5m': '3 - 5 млн',
-    '5-10m': '5 - 10 млн',
-    '10-15m': '10-15млн',
-    'lg15m': ' Более 15 млн'
-}
+const onSubmit = async (type = "", state) => {
+    const validator = new FormValidator(state);
 
-const state = reactive({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    message: '',
-    services: [],
-    budget: [],
-    file: '',
-    submit_disabled: true
-});
-
-const toggleElement = (arr = [], element = '') => {
-    if (arr.includes(element)) {
-        const index = arr.findIndex((v) => v == element);
-        arr.splice(index, 1);
-    } else {
-        arr.push(element);
+    let result = {};
+    let script = 'mail.php';
+    switch (type) {
+        case 'mobile':
+            result = await validator.mobile();
+            script = 'mobile-mail.php';
+            break;
+        case 'desktop':
+            result = await validator.desktop();
+            break;
     }
-}
-
-const toggleBudget = (arr, element) => {
-    // why this only works with arrays ?????????
-    if (arr.includes(element)) {
-        arr[0] = '';
-    } else {
-        arr[0] = element;
-    }
-}
-
-const file_ref = ref();
-const form_ref = ref();
-
-const formSubmit = async function (state) {
-    let fields = {
-        'name': { name: state.name, error: 'Проверьте поле "имя"', predicate(field) { return !!field } },
-        'email': { name: state.email, error: 'Проверьте поле "почта"', predicate: (email) => !!email },
-        'phone': { name: state.phone, error: 'Проверьте поле "Телефон"', predicate: (phone) => !!phone },
-        'message': { name: state.message, error: 'Проверьте поле "Сообщение"', predicate: (message) => !!message },
-        'services': { name: state.services, error: 'Выберите хотя бы один пункт в поле "Услуги"', predicate: (services) => services.length > 0 },
-        'budget': { name: state.budget, error: 'На какой бюджет вы рассчитываете?', predicate: (budget) => budget.length == 1 },
-        'file': { name: file_ref.value.files[0], error: 'нет тз', predicate(file) { return file } }
+    console.log(result);
+    submitErrors.result = Object.fromEntries(result.filter(e => !e.check.result).map(obj => ([[obj.key], obj.check.error])));
+    if (submitErrors.result.length) {
+        return;
     }
 
-    const checkField = function ({ name = '', error = '', predicate = () => { } }) {
-        if (!predicate(name)) {
-            throw new Error(error)
-        }
-
-        return true;
+    const formData = new FormData();
+    for (let [k, v] of Object.entries(state)) {
+        formData.append(k, v);
     }
-
-    for (let [key, field] of Object.entries(fields)) {
-        console.log('check field', key, field);
-        checkField(field)
-    }
-
-    const formData = new FormData(form_ref.value);
-    formData.set('budget',state.budget[0]);
-    formData.set('services',JSON.stringify(state.services));
     try {
-        const request = await fetch('/mail.php', {
+        const request = await fetch(script, {
             method: 'POST',
             body: formData
         })
+        const response = await request.json();
+        console.log(response);
+        formState.submitted = true;
 
-        const text = await request.text();
-        console.log(text);
-    }catch(e){
-        console.log(e);
+    } catch (e) {
+        console.error(e);
     }
-}
-
-const set_file = (event) => {
-    console.log(event.target.files);
 }
 
 </script>
@@ -222,6 +116,8 @@ $unactiveColor: rgba(255, 255, 255, .5);
         & header {
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
 
             & button {
                 background: transparent;
@@ -240,7 +136,7 @@ $unactiveColor: rgba(255, 255, 255, .5);
         }
     }
 
-    & .form-for-project-start form {
+    & .form-for-project-start .form-style {
         display: flex;
         flex-flow: row wrap;
         gap: 50px;
@@ -251,8 +147,6 @@ $unactiveColor: rgba(255, 255, 255, .5);
 .field {
     max-width: 500px;
 }
-
-
 
 .field .check {
     width: 100%;
@@ -363,5 +257,21 @@ $unactiveColor: rgba(255, 255, 255, .5);
 .submit.input_active {
     border: 1px solid white;
     color: white;
+}
+
+.form-submitted-message {
+    max-width: 100%;
+    max-height: 500px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 5vw;
+    gap: 30px;
+}
+
+.form-submitted-message img {
+    max-width: 50%;
+    margin: 0 auto;
 }
 </style>

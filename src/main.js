@@ -5,5 +5,5 @@ import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import '@splidejs/vue-splide/css';
 const app = createApp(App);
 app.config.globalProperties.window = window;
-app.use(VueSplide,{AutoScroll});
+app.use(VueSplide, { AutoScroll });
 app.mount('#app')

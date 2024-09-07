@@ -2,8 +2,7 @@
     color: white;
     display: flex;
     flex-flow: column;
-    border-bottom: 1px solid rgba(255, 255, 255, .5);
-
+    
     & span {
         font-size: 18px;
         line-height: 75px;
@@ -16,6 +15,7 @@
         outline: none;
         color: white;
         max-width: 500px;
+        border-bottom: 1px solid rgba(255, 255, 255, .5);
     }
 
     & textarea {

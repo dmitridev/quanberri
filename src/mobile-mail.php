@@ -74,6 +74,10 @@ try
     $mail->addAddress('dmitrit.dev@gmail.com');
     $mail->Subject = 'Новый клиент';
     $mail->Body = $body_content;
+    $mail->Host = 'ssl://smtp.yandex.ru';
+    $mail->Port = 465;
+    $mail->Username="dmitrytolma4iov@yandex.ru";
+    $mail->Password="TiKudaLezesh";
 
     if ($_FILES && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
         $mail->addAttachment($_FILES['file']['tmp_name']);

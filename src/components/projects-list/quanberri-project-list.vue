@@ -200,7 +200,7 @@ function WatchForCurrentSlide(_, index) {
   justify-content: space-between;
   width: 100%;
   align-content: space-between;
-  margin-bottom: 157px;
+  
   row-gap: 20px;
 }
 

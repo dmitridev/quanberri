@@ -57,8 +57,8 @@
 .competencies-header {
     color:white;
     font-size:max(2.7vw,20px);
-    margin-bottom:50px;
-    margin-top:50px;
+    margin-bottom:100px;
+    margin-top:150px;
 }
 
 .competencies {

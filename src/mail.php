@@ -126,6 +126,11 @@ try
         $mail->addAttachment($_FILES['file']['tmp_name']);
     }
 
+    $mail->Host = 'ssl://smtp.yandex.ru';
+    $mail->Port = 465;
+    $mail->Username="dmitrytolma4iov@yandex.ru";
+    $mail->Password="TiKudaLezesh";
+
     $result = $mail->send();
     unlink($_FILES['file']['tmp_name']);
 

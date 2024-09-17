@@ -147,7 +147,7 @@ h1.brand-text {
 .companies-header {
   display: flex;
   justify-content: space-between;
-  margin-top: 147px;
+  /*margin-top: 147px;*/
   margin-bottom: 160px;
 }
 
@@ -165,7 +165,7 @@ h1.brand-text {
 }
 
 .our-peoples-header {
-  margin-top: 162px;
+  /*margin-top: 162px;*/
   margin-bottom: 120px;
   display: flex;
   color: var(--font-color);
@@ -212,8 +212,8 @@ footer {
 }
 
 .heading-in-footer {
-  padding-top: 153px;
-  padding-bottom: 183px;
+  padding-top: 150px;
+  padding-bottom: 100px;
   font-size: var(--footer__desktop__header--font-size);
   display: flex;
 }

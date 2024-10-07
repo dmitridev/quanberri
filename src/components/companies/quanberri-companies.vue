@@ -35,8 +35,8 @@
           <quanberri-company :image="Company14"></quanberri-company>
           <quanberri-company :image="Company15"></quanberri-company>
           <quanberri-company :image="Company16"></quanberri-company>
-          <quanberri-company :image="Company17"></quanberri-company>
-          <quanberri-company :image="Company18"></quanberri-company>
+          <quanberri-company :image="Company1"></quanberri-company>
+          <quanberri-company :image="Company2"></quanberri-company>
         </div>
       </SplideSlide>
     </Splide>
@@ -134,11 +134,11 @@
       </SplideSlide>
       
       <SplideSlide>
-        <quanberri-company :image="Company17"></quanberri-company>
+        <quanberri-company :image="Company1"></quanberri-company>
       </SplideSlide>
       
       <SplideSlide>
-        <quanberri-company :image="Company18"></quanberri-company>
+        <quanberri-company :image="Company2"></quanberri-company>
       </SplideSlide>
     </Splide>
   </div>
@@ -162,8 +162,6 @@ import Company13 from "@/assets/images/company/company-13.svg";
 import Company14 from "@/assets/images/company/company-14.svg";
 import Company15 from "@/assets/images/company/company-15.svg";
 import Company16 from "@/assets/images/company/company-16.svg";
-import Company17 from "@/assets/images/company/company-17.svg";
-import Company18 from "@/assets/images/company/company-18.svg";
 
 import { useWindowSize } from "@vueuse/core";
 import { ref } from "vue";
@@ -213,3 +211,9 @@ function WatchForCurrentSlide(_, index) {
   buttonLeft.value.style = "";
 }
 </script>
+
+<style>
+  .companies-list{
+    align-items:center;
+  }
+</style>

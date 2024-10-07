@@ -34,7 +34,7 @@
         <quanberri-companies></quanberri-companies>
       </quanberri-companies-wrapper>
     </quanberri-container>
-
+<!--
     <quanberri-container>
       <quanberri-our-experts-wrapper>
         <quanberri-our-experts-header></quanberri-our-experts-header>
@@ -44,6 +44,7 @@
     <quanberri-our-experts-list-wrapper>
       <quanberri-our-experts></quanberri-our-experts>
     </quanberri-our-experts-list-wrapper>
+-->
     <quanberri-footer></quanberri-footer>
   </template>
   <template v-if="!loaded">
@@ -55,26 +56,26 @@ import QuanberriContainer from "@/components/utility/quanberi-container.vue";
 import quanberriCompanies from "@/components/companies/quanberri-companies.vue";
 import quanberriHeader from "@/components/header/quanberri-header.vue";
 import quanberriMainText from "@/components/main-text/quanberri-main-text.vue";
-import quanberriOurExperts from "@/components/our-experts/quanberri-our-experts.vue";
+//import quanberriOurExperts from "@/components/our-experts/quanberri-our-experts.vue";
 import QuanberriProjectList from "@/components/projects-list/quanberri-project-list.vue";
 import quanberriVideoBlock from "@/components/video-block/quanberri-video-block.vue";
 import quanberriFooter from "@/components/footer/quanberri-footer.vue";
-import QuanberriOurExpertsHeader from "@/components/our-experts/quanberri-our-experts-header.vue";
+//import QuanberriOurExpertsHeader from "@/components/our-experts/quanberri-our-experts-header.vue";
 //import QuanberriAdvantages from "@/components/advangates/quanberri-advantages.vue";
 import quanberriMainTextWrapper from "@/components/main-text/quanberri-main-text-wrapper.vue";
 import QuanberriVideoBlockWrapper from "@/components/video-block/quanberri-video-block-wrapper.vue";
 import quanberriProjectsListWrapper from "@/components/projects-list/quanberri-projects-list-wrapper.vue";
 //import quanberriAdvantagesWrapper from "@/components/advangates/quanberri-advantages-wrapper.vue";
 import quanberriCompaniesWrapper from "@/components/companies/quanberri-companies-wrapper.vue";
-import quanberriOurExpertsWrapper from "@/components/our-experts/quanberri-our-experts-wrapper.vue";
-import quanberriOurExpertsListWrapper from "@/components/our-experts/quanberri-our-experts-list-wrapper.vue";
+//import quanberriOurExpertsWrapper from "@/components/our-experts/quanberri-our-experts-wrapper.vue";
+//import quanberriOurExpertsListWrapper from "@/components/our-experts/quanberri-our-experts-list-wrapper.vue";
 import quanberriFixedMenu from '@/components/fixed-menu/quanberri-fixed-menu.vue';
 import quanberriCompetencies from "./components/competitions/quanberri-competencies.vue";
 import { onMounted, ref } from "vue";
 
 const loaded = ref(false)
 onMounted(() => {
-  window.addEventListener('load', () => setTimeout(() => loaded.value = true, 1000))
+  window.addEventListener('DOMContentLoaded', () => setTimeout(() => loaded.value = true, 1000))
 })
 
 </script>

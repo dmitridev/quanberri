@@ -5,6 +5,8 @@
         loop
         autoplay
         muted
+        preload=""
+        poster="@/assets/images/preloader/loader.gif"
       ></video>
     </div>
 </template>

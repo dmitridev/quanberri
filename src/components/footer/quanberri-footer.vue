@@ -23,3 +23,9 @@ const links = {
 }
 
 </script>
+
+<style>
+  footer{
+    margin-top:150px;
+  }
+</style>

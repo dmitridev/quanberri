@@ -11,4 +11,12 @@ const props = defineProps(['image']);
     .company-img{
         max-width:260px;
     }
+
+    .company{
+        width:300px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 </style>
